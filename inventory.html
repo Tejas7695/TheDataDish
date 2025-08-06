@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Inventory Management | The Data Dish</title>
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet" />
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+  <style>
+    nav a {
+      color: white;
+      text-decoration: none;
+      position: relative;
+    }
+
+    nav a::after {
+      content: "";
+      position: absolute;
+      width: 100%;
+      height: 2px;
+      bottom: -2px;
+      left: 0;
+      background: linear-gradient(90deg, #00fff0, #ff00ff);
+      transform: scaleX(0);
+      transition: transform 0.3s ease;
+      transform-origin: right;
+    }
+
+    nav a:hover::after {
+      transform: scaleX(1);
+      transform-origin: left;
+    }
+
+    nav a.active {
+      color: #00ffe5;
+      border-bottom: 2px solid #00ffe5;
+    }
+
+    .charts {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-around;
+      gap: 2rem;
+      margin-top: 2rem;
+    }
+
+    .chart-container {
+      width: 45%;
+      background: rgba(255, 255, 255, 0.05);
+      padding: 2rem;
+      border-radius: 1rem;
+      box-shadow: 0 0 15px rgba(0, 255, 255, 0.1);
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <nav>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="sales-tracking.html">Sales Tracking</a></li>
+        <li><a href="inventory.html" class="active">Inventory</a></li>
+        <li><a href="index.html#services">Services</a></li>
+        <li><a href="index.html#contact">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main class="service-detail" data-aos="fade-up">
+    <section class="hero-subpage">
+      <h1>Inventory Management</h1>
+      <p>📦 Track stock levels in real-time, restock smartly, and never run out again.</p>
+    </section>
+
+    <section class="content">
+      <h2>Key Features</h2>
+      <div class="service-cards">
+        <div class="card">
+          <h3>Predictive Restocking</h3>
+          <p>Get alerts when stock is low and suggestions on how much to reorder.</p>
+        </div>
+        <div class="card">
+          <h3>Category-Wise Trends</h3>
+          <p>Visualize inventory movement across categories and time.</p>
+        </div>
+        <div class="card center-card">
+          <h3>Real-Time Dashboards</h3>
+          <p>Monitor inventory updates live and analyze availability per outlet.</p>
+        </div>
+      </div>
+
+      <h2>Interactive Ingredient Breakdown</h2>
+      <div class="charts">
+        <div class="chart-container">
+          <canvas id="ingredientDonutChart"></canvas>
+        </div>
+        <div class="chart-container">
+          <canvas id="ingredientLineChart"></canvas>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 The Data Dish</p>
+  </footer>
+
+  <!-- Libraries -->
+  <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+  <script>AOS.init({ duration: 1000, once: true });</script>
+
+  <!-- Interactive Chart Logic -->
+  <script>
+    const ingredientData = {
+      labels: ['Rice', 'Chicken', 'Potatoes', 'Eggs'],
+      datasets: [{
+        label: 'Inventory Share',
+        data: [30, 25, 20, 25],
+        backgroundColor: ['#FF6384', '#36A2EB', '#FFCE56', '#4BC0C0'],
+        hoverOffset: 10
+      }]
+    };
+
+    const donutChart = new Chart(
+      document.getElementById('ingredientDonutChart'),
+      {
+        type: 'doughnut',
+        data: ingredientData,
+        options: {
+          onClick: (e, elements) => {
+            if (elements.length > 0) {
+              const index = elements[0].index;
+              const ingredient = ingredientData.labels[index];
+              updateLineChart(ingredient);
+            }
+          },
+          plugins: {
+            title: {
+              display: true,
+              text: 'Click Ingredient to View Usage',
+              color: '#fff',
+              font: { size: 18 }
+            },
+            legend: {
+              labels: { color: '#fff' }
+            }
+          }
+        }
+      }
+    );
+
+    const lineCtx = document.getElementById('ingredientLineChart').getContext('2d');
+    let lineChart = new Chart(lineCtx, {
+      type: 'line',
+      data: {
+        labels: ['June', 'July', 'August'],
+        datasets: []
+      },
+      options: {
+        responsive: true,
+        plugins: {
+          legend: {
+            labels: { color: '#fff' }
+          }
+        },
+        scales: {
+          x: {
+            ticks: { color: '#fff' },
+            grid: { color: '#444' }
+          },
+          y: {
+            ticks: { color: '#fff' },
+            grid: { color: '#444' }
+          }
+        }
+      }
+    });
+
+    function updateLineChart(ingredient) {
+      const usageData = {
+        'Rice': [120, 150, 130],
+        'Chicken': [90, 110, 105],
+        'Potatoes': [100, 95, 120],
+        'Eggs': [80, 85, 90]
+      };
+
+      const colorMap = {
+        'Rice': '#FF6384',
+        'Chicken': '#36A2EB',
+        'Potatoes': '#FFCE56',
+        'Eggs': '#4BC0C0'
+      };
+
+      lineChart.data.datasets = [{
+        label: `${ingredient} Usage (kg)`,
+        data: usageData[ingredient],
+        borderColor: colorMap[ingredient],
+        tension: 0.3,
+        fill: false
+      }];
+
+      lineChart.update();
+    }
+  </script>
+</body>
+
+</html>
