@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Marketing Automation | The Data Dish</title>
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet" />
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+  <style>
+    body {
+      background-color: #0d0d0d;
+      color: white;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      margin: 0;
+      padding: 0;
+    }
+
+    nav {
+      background: #111;
+      padding: 20px;
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 30px;
+    }
+
+    nav a {
+      color: white;
+      text-decoration: none;
+      position: relative;
+    }
+
+    nav a::after {
+      content: "";
+      position: absolute;
+      width: 100%;
+      height: 2px;
+      bottom: -2px;
+      left: 0;
+      background: linear-gradient(90deg, #00fff0, #ff00ff);
+      transform: scaleX(0);
+      transition: transform 0.3s ease;
+      transform-origin: right;
+    }
+
+    nav a:hover::after {
+      transform: scaleX(1);
+      transform-origin: left;
+    }
+
+    nav a.active {
+      color: #00ffe5;
+      border-bottom: 2px solid #00ffe5;
+    }
+
+    header,
+    footer {
+      text-align: center;
+      padding: 20px;
+      background-color: #111;
+    }
+
+    .hero-subpage {
+      text-align: center;
+      padding: 40px 20px;
+    }
+
+    .content {
+      padding: 20px 40px;
+    }
+
+    .card {
+      background: #1a1a1d;
+      padding: 20px;
+      border-radius: 12px;
+      margin-bottom: 20px;
+    }
+
+    canvas {
+      background-color: #1a1a1d;
+      border-radius: 12px;
+      padding: 20px;
+      margin-top: 20px;
+      width: 100%;
+      max-width: 700px;
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <nav>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="marketing.html" class="active">Marketing Automation</a></li>
+        <li><a href="index.html#services">Services</a></li>
+        <li><a href="index.html#contact">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main class="service-detail" data-aos="fade-up">
+    <section class="hero-subpage">
+      <h1>Marketing Automation</h1>
+      <p>📣 Reach customers at the perfect moment with smart automation.</p>
+    </section>
+
+    <section class="content">
+      <h2>What We Offer</h2>
+      <div class="service-cards">
+        <div class="card">
+          <h3>Targeted SMS & Email Campaigns</h3>
+          <p>Automatically send personalized promotions based on past orders and customer preferences.</p>
+        </div>
+        <div class="card">
+          <h3>Smart Triggers & Scheduling</h3>
+          <p>Set automated flows to reach out on birthdays, loyalty milestones, or at off-peak times.</p>
+        </div>
+        <div class="card">
+          <h3>Analytics Dashboard</h3>
+          <p>Track open rates, engagement metrics, and conversions in a unified dashboard.</p>
+        </div>
+      </div>
+
+      <!-- Combined Chart -->
+      <h2>Email Campaign Funnel Analysis</h2>
+      <canvas id="funnelChart" height="300"></canvas>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 The Data Dish</p>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+  <script>
+    AOS.init({ duration: 1000, once: true });
+  </script>
+
+  <script>
+    const ctxFunnel = document.getElementById('funnelChart').getContext('2d');
+
+    const funnelChart = new Chart(ctxFunnel, {
+      type: 'bar',
+      data: {
+        labels: ['Emails Sent', 'Opened', 'Redeemed'],
+        datasets: [
+          {
+            label: 'User Count',
+            data: [1000, 620, 230],
+            backgroundColor: '#00bfff',
+            borderRadius: 10
+          },
+          {
+            label: 'Conversion Rate (%)',
+            data: [0, 62, 23],
+            type: 'line',
+            borderColor: '#ffa500',
+            backgroundColor: '#ffa500',
+            fill: false,
+            tension: 0.3,
+            yAxisID: 'y1'
+          }
+        ]
+      },
+      options: {
+        responsive: true,
+        plugins: {
+          legend: {
+            labels: { color: '#ffffff' }
+          },
+          title: {
+            display: true,
+            text: 'Email Campaign Funnel Analysis',
+            color: '#ffffff',
+            font: { size: 20 }
+          }
+        },
+        scales: {
+          y: {
+            beginAtZero: true,
+            title: {
+              display: true,
+              text: 'Users',
+              color: '#ffffff'
+            },
+            ticks: { color: '#ffffff' }
+          },
+          y1: {
+            beginAtZero: true,
+            position: 'right',
+            title: {
+              display: true,
+              text: 'Conversion Rate (%)',
+              color: '#ffa500'
+            },
+            ticks: { color: '#ffa500' },
+            grid: {
+              drawOnChartArea: false
+            }
+          },
+          x: {
+            ticks: { color: '#ffffff' }
+          }
+        }
+      }
+    });
+  </script>
+</body>
+
+</html>
