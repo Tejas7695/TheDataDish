@@ -7,16 +7,44 @@
   <link rel="stylesheet" href="style.css">
   <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-  <style>
-  html {
-    scroll-behavior: smooth;
-  }
+  <!-- AOS CSS -->
+<link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
 
-  nav a.active {
-    color: #00ffe5;
-    border-bottom: 2px solid #00ffe5;
-  }
+  <style>
+     html {
+      scroll-behavior: smooth;
+    }
+
+    nav a {
+      color: white;
+      text-decoration: none;
+      position: relative;
+    }
+
+    nav a::after {
+      content: "";
+      position: absolute;
+      width: 100%;
+      height: 2px;
+      bottom: -2px;
+      left: 0;
+      background: linear-gradient(90deg, #00fff0, #ff00ff);
+      transform: scaleX(0);
+      transition: transform 0.3s ease;
+      transform-origin: right;
+    }
+
+    nav a:hover::after {
+      transform: scaleX(1);
+      transform-origin: left;
+    }
+
+    nav a.active {
+      color: #00ffe5;
+      border-bottom: 2px solid #00ffe5;
+    }
 </style>
+
 </head>
 
 <body>
@@ -45,20 +73,36 @@
 </section>
 
   <!-- Services Section -->
-<section class="services" id="services">
-  <h2 class="section-title">Our Services</h2>
-  <div class="services-grid">
-    <div class="service-card">
-      <h3>📊 Sales Tracking</h3>
-      <p>Monitor your revenue daily, weekly, or monthly using sleek dashboards tailored for restaurants.</p>
-    </div>
-    <div class="service-card">
+<section class="services" id="services" data-aos="fade-up">
+  <h2 class="section-title" data-aos="zoom-in">Our Services</h2>
+
+  <!-- Top row with 3 boxes -->
+  <div class="service-row top">
+    <a href="sales-tracking.html" class="service-card-link">
+  <div class="service-card" data-aos="fade-up" data-aos-delay="0">
+    <h3>📊 Sales Tracking</h3>
+    <p>Monitor your revenue daily, weekly, or monthly using sleek dashboards tailored for restaurants.</p>
+  </div>
+</a>
+    <div class="service-card" data-aos="fade-up" data-aos-delay="100">
       <h3>📦 Inventory Management</h3>
       <p>Track stock, reduce waste, and always know what’s running low — automatically.</p>
     </div>
-    <div class="service-card">
+    <div class="service-card" data-aos="fade-up" data-aos-delay="200">
       <h3>📣 Marketing Automation</h3>
       <p>Send smart offers to the right people using data-backed customer segmentation.</p>
+    </div>
+  </div>
+
+  <!-- Bottom row with 2 boxes centered -->
+  <div class="service-row bottom">
+    <div class="service-card" data-aos="fade-up" data-aos-delay="300">
+      <h3>👥 Customer Behavior Analytics</h3>
+      <p>Understand your customer preferences, loyalty patterns, and visit trends.</p>
+    </div>
+    <div class="service-card" data-aos="fade-up" data-aos-delay="400">
+      <h3>📈 Performance Reports</h3>
+      <p>Get easy-to-read summaries on what’s working — and what’s not — across your business.</p>
     </div>
   </div>
 </section>
@@ -162,11 +206,13 @@
       <a href="#contact">Contact</a>
     </div>
 
-    <div class="footer-socials">
-      <a href="#"><i class="fab fa-instagram"></i></a>
-      <a href="#"><i class="fab fa-x-twitter"></i></a>
-      <a href="#"><i class="fab fa-linkedin-in"></i></a>
-    </div>
+   <div class="footer-socials">
+  <a href="https://www.instagram.com/thedatadish/" target="_blank">
+    <i class="fab fa-instagram"></i>
+  </a>
+  <!-- <a href="#"><i class="fab fa-x-twitter"></i></a> -->
+  <!-- <a href="#"><i class="fab fa-linkedin-in"></i></a> -->
+</div>
   </div>
   <p class="footer-copy">&copy; 2025 The Data Dish. Built with 💙 + Data.</p>
 </footer>
@@ -271,6 +317,15 @@
 </script>
 
 <div class="custom-cursor"></div>
+
+<!-- AOS JS -->
+<script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+<script>
+  AOS.init({
+    duration: 1000, // animation duration in ms
+    once: true      // animation happens only once
+  });
+</script>
 
 </body>
 </html>

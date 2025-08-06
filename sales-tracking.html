@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sales Tracking | The Data Dish</title>
+  <link rel="stylesheet" href="style.css"> <!-- links to your main CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet"> <!-- AOS animation library -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+</head>
+
+<body>
+  <header>
+    <nav>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="sales-tracking.html" class="active">Sales Tracking</a></li>
+        <li><a href="index.html#services">Services</a></li>
+        <li><a href="index.html#contact">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main class="service-detail" data-aos="fade-up">
+    <section class="hero-subpage">
+      <h1>Sales Tracking</h1>
+      <p>📈Know your numbers, grow your business.</p>
+    </section>
+
+    <section class="content">
+     <h2>What We Offer</h2>
+<div class="service-cards">
+  <div class="card">
+    <h3>Daily, Weekly & Monthly Dashboards</h3>
+    <p>Our custom dashboards give you real-time insight into your sales trends with clean visual breakdowns.</p>
+  </div>
+  <div class="card">
+    <h3>Automated Reports</h3>
+    <p>Receive scheduled reports in your inbox to stay updated without logging in daily.</p>
+  </div>
+    <div class="card center-card">
+    <h3>Top Dishes & Downtime Alerts</h3>
+    <p>Know exactly which menu items are killing it and which hours are slowing you down.</p>
+    
+  </div>
+</div>
+       <h2>Monthly Sales Overview</h2>
+<canvas id="salesChart" width="400" height="200"></canvas>
+
+<!-- 🔥 Glowing Divider -->
+<div class="glow-line"></div>
+
+<!-- ✨ NEW Daily Sales Comparison Section -->
+<h2>Daily Sales Trend Comparison</h2>
+<canvas id="dailySalesChart" width="400" height="200"></canvas>
+
+<h2>Sample Visual</h2>
+<img src="https://i.imgur.com/3x1zZgW.png" alt="Sales Chart Sample" class="chart-img">
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 The Data Dish</p>
+  </footer>
+
+  <!-- AOS & JavaScript -->
+  <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+  <script>
+    AOS.init();
+  </script>
+
+  <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+<script>
+  AOS.init({
+    duration: 1000,
+    once: true
+  });
+</script>
+
+<script>
+  const ctx = document.getElementById('salesChart').getContext('2d');
+  const salesChart = new Chart(ctx, {
+    type: 'line',
+    data: {
+      labels: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun'],
+      datasets: [{
+        label: 'Sales (₹)',
+        data: [12000, 15000, 17000, 14000, 19000, 22000],
+        backgroundColor: 'rgba(0, 123, 255, 0.2)',
+        borderColor: '#00ffff',
+        borderWidth: 2,
+        pointBackgroundColor: '#ffffff'
+      }]
+    },
+    options: {
+      responsive: true,
+      plugins: {
+        legend: {
+          labels: {
+            color: 'white'
+          }
+        }
+      },
+      scales: {
+        x: {
+          ticks: {
+            color: 'white'
+          }
+        },
+        y: {
+          ticks: {
+            color: 'white'
+          }
+        }
+      }
+    }
+  });
+</script>
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script>
+  const ctx2 = document.getElementById('dailySalesChart').getContext('2d');
+  const dailySalesChart = new Chart(ctx2, {
+    type: 'bar',
+    data: {
+      labels: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'],
+      datasets: [{
+        label: 'Daily Sales ($)',
+        data: [450, 520, 600, 430, 700, 880, 650],
+        backgroundColor: 'rgba(75, 192, 192, 0.7)',
+        borderRadius: 6,
+        borderSkipped: false
+      }]
+    },
+    options: {
+      responsive: true,
+      plugins: {
+        legend: {
+          display: false
+        },
+        tooltip: {
+          callbacks: {
+            label: function(context) {
+              return `$${context.parsed.y}`;
+            }
+          }
+        }
+      },
+      scales: {
+        y: {
+          beginAtZero: true,
+          ticks: {
+            callback: function(value) {
+              return `$${value}`;
+            }
+          }
+        }
+      }
+    }
+  });
+</script>
+
+</body>
+
+</html>
