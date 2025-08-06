@@ -1,66 +1,276 @@
-<!-- index.html -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>The Data Dish</title>
-  <link rel="stylesheet" href="style.css" />
-  <script defer src="script.js"></script>
+  <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <style>
+  html {
+    scroll-behavior: smooth;
+  }
+
+  nav a.active {
+    color: #00ffe5;
+    border-bottom: 2px solid #00ffe5;
+  }
+</style>
 </head>
+
 <body>
-  <header class="header">
-    <div class="container">
-      <h1 class="logo">The Data Dish</h1>
-      <nav class="navbar">
-        <a href="#home">Home</a>
-        <a href="#services">Services</a>
-        <a href="#about">Our Story</a>
-        <a href="#contact">Contact</a>
-      </nav>
+
+    <body>
+  <div id="particles-js"></div>
+
+    <!-- NAVIGATION BAR -->
+<nav class="main-nav">
+  <ul class="nav-links">
+    <li><a href="#hero" class="nav-link">Home</a></li>
+    <li><a href="#services" class="nav-link">Services</a></li>
+    <li><a href="#story" class="nav-link">Our Story</a></li>
+    <li><a href="#contact" class="nav-link">Contact</a></li>
+    <li><a href="#newsletter" class="nav-link">Newsletter</a></li>
+  </ul>
+</nav>
+
+  <!-- HERO SECTION -->
+  <section class="hero" id="hero">
+  <div class="hero-content">
+    <h1 class="neon-title">The Data Dish</h1>
+    <p class="hero-subtitle">Restaurant Analytics Simplified.</p>
+    <a href="#services" class="glow-btn">Explore Services</a>
+  </div>
+</section>
+
+  <!-- Services Section -->
+<section class="services" id="services">
+  <h2 class="section-title">Our Services</h2>
+  <div class="services-grid">
+    <div class="service-card">
+      <h3>📊 Sales Tracking</h3>
+      <p>Monitor your revenue daily, weekly, or monthly using sleek dashboards tailored for restaurants.</p>
     </div>
-  </header>
-
-  <section class="hero" id="home">
-    <h2 class="typed-text"><span id="typewriter"></span><span class="cursor">|</span></h2>
-    <p>Powerful analytics tools tailored for small restaurants. Let your data drive your growth.</p>
-    <a href="#contact" class="btn-primary">Get Started</a>
-  </section>
-
-  <section class="section" id="services">
-    <h2>Our Services</h2>
-    <div class="cards">
-      <div class="card">
-        <h3>📊 Sales Tracking</h3>
-        <p>Track sales trends with real-time dashboards customized to your needs.</p>
-      </div>
-      <div class="card">
-        <h3>📦 Inventory Management</h3>
-        <p>Keep stock levels optimized and reduce wastage with AI alerts.</p>
-      </div>
-      <div class="card">
-        <h3>📣 Marketing Insights</h3>
-        <p>Leverage customer behavior data to run laser-targeted promotions.</p>
-      </div>
+    <div class="service-card">
+      <h3>📦 Inventory Management</h3>
+      <p>Track stock, reduce waste, and always know what’s running low — automatically.</p>
     </div>
-  </section>
+    <div class="service-card">
+      <h3>📣 Marketing Automation</h3>
+      <p>Send smart offers to the right people using data-backed customer segmentation.</p>
+    </div>
+  </div>
+</section>
 
-  <section class="section" id="about">
+<div class="neon-divider"></div>
+
+<section class="glass-section">
+  <div class="glass-card">
+    <h2>🚀 Why The Data Dish?</h2>
+    <p>
+      Because you deserve more than spreadsheets.  
+      You deserve sleek dashboards, real-time insights,  
+      and automation that makes you money while you sleep.
+    </p>
+    <a href="#contact" class="glow-btn">Let’s Talk</a>
+  </div>
+</section>
+
+<div class="neon-divider"></div>
+
+<section id="story" class="our-story" data-aos="fade-up">
+  <div class="story-content">
     <h2>Our Story</h2>
     <p>
-      The Data Dish was born from our passion for food and analytics. We simplify business intelligence for restaurant owners through beautiful, functional dashboards that actually help.
+      The Data Dish was born out of a passion to empower small restaurant owners
+      with world-class analytics. What started as a simple idea became a mission:
+      to simplify complex data into beautiful, actionable insights that help F&B
+      businesses thrive.
     </p>
-  </section>
+    <p>
+      Founded by data a nerd with a love for food, our tools are built for
+      real-world restaurant challenges — and we’re just getting started.
+    </p>
+  </div>
+</section>
+<div class="neon-divider"></div>
 
-  <section class="section" id="contact">
-    <h2>Contact Us</h2>
-    <p>We're here to help you scale. Reach out today.</p>
-    <p>Email: <a href="mailto:contact@thedatadish.in">contact@thedatadish.in</a></p>
-    <p>Phone: <a href="tel:+918879504945">+91 8879504945</a></p>
-  </section>
+<div class="color-shift-bg"></div>
 
-  <footer class="footer">
-    <p>&copy; 2025 The Data Dish. All rights reserved.</p>
-  </footer>
+<!-- Contact Section -->
+<section id="contact" class="contact-section" data-aos="fade-up">
+  <div class="contact-container">
+    <h2>Get in Touch</h2>
+    <p>Have questions? Need custom analytics? Let's build your data dream together.</p>
+    
+    <form class="contact-form">
+      <input type="text" placeholder="Your Name" required />
+      <input type="email" placeholder="Your Email" required />
+      <textarea placeholder="Your Message" rows="5" required></textarea>
+      <button type="submit">Send Message</button>
+    </form>
+  </div>
+</section>
+
+<!--EWSLETTER SIGNUP SECTION -->
+<section class="newsletter" id="newsletter">
+  <div class="newsletter-container" data-aos="zoom-in">
+    <h2>📬 Subscribe to Our Newsletter</h2>
+    <p>Get the latest updates, tips, and exclusive offers delivered straight to your inbox.</p>
+
+    <form class="newsletter-form">
+      <input type="email" placeholder="Enter your email address" required>
+      <button type="submit">Subscribe</button>
+    </form>
+  </div>
+</section>
+
+<section class="impact-section" id="impact">
+  <h2 class="section-title">Why Choose The Data Dish?</h2>
+  <div class="impact-grid">
+    <div class="impact-card" data-aos="flip-left">
+      <i class="fas fa-bolt"></i>
+      <h3>Instant Insights</h3>
+      <p>Make decisions in real-time with powerful, lightning-fast dashboards tailored for your restaurant.</p>
+    </div>
+    <div class="impact-card" data-aos="flip-left" data-aos-delay="100">
+      <i class="fas fa-shield-alt"></i>
+      <h3>Data You Can Trust</h3>
+      <p>Every chart, graph, and number is backed by secure, clean, and reliable analytics.</p>
+    </div>
+    <div class="impact-card" data-aos="flip-left" data-aos-delay="200">
+      <i class="fas fa-fire-alt"></i>
+      <h3>Built for F&B</h3>
+      <p>Everything we do is designed specifically for restaurants, cafes, and cloud kitchens.</p>
+    </div>
+  </div>
+</section>
+
+
+<footer class="footer">
+  <div class="footer-content">
+    <div class="footer-logo">
+      <h2>The Data Dish</h2>
+      <p>Empowering restaurant analytics like never before.</p>
+    </div>
+
+    <div class="footer-links">
+      <a href="#">Home</a>
+      <a href="#services">Services</a>
+      <a href="#story">Our Story</a>
+      <a href="#contact">Contact</a>
+    </div>
+
+    <div class="footer-socials">
+      <a href="#"><i class="fab fa-instagram"></i></a>
+      <a href="#"><i class="fab fa-x-twitter"></i></a>
+      <a href="#"><i class="fab fa-linkedin-in"></i></a>
+    </div>
+  </div>
+  <p class="footer-copy">&copy; 2025 The Data Dish. Built with 💙 + Data.</p>
+</footer>
+
+
+<script>
+  // Scrollspy Logic
+  const sections = document.querySelectorAll("section");
+  const navLinks = document.querySelectorAll("nav a");
+
+  window.addEventListener("scroll", () => {
+    let current = "";
+    sections.forEach((section) => {
+      const sectionTop = section.offsetTop;
+      const sectionHeight = section.clientHeight;
+      if (pageYOffset >= sectionTop - sectionHeight / 3) {
+        current = section.getAttribute("id");
+      }
+    });
+
+    navLinks.forEach((link) => {
+      link.classList.remove("active");
+      if (link.getAttribute("href") === `#${current}`) {
+        link.classList.add("active");
+      }
+    });
+  });
+</script>
+
+<script>
+  const sections = document.querySelectorAll("section");
+  const navLinks = document.querySelectorAll(".nav-link");
+
+  window.addEventListener("scroll", () => {
+    let current = "";
+    sections.forEach((section) => {
+      const sectionTop = section.offsetTop - 70;
+      if (pageYOffset >= sectionTop) {
+        current = section.getAttribute("id");
+      }
+    });
+
+    navLinks.forEach((link) => {
+      link.classList.remove("active");
+      if (link.getAttribute("href") === `#${current}`) {
+        link.classList.add("active");
+      }
+    });
+  });
+</script>
+<!-- Back to Top Button -->
+<a href="#hero" class="back-to-top"><i class="fas fa-arrow-up"></i></a>
+
+<script src="https://cdn.jsdelivr.net/npm/particles.js"></script>
+<script>
+  particlesJS("particles-js", {
+    "particles": {
+      "number": {
+        "value": 60,
+        "density": {
+          "enable": true,
+          "value_area": 800
+        }
+      },
+      "color": {
+        "value": "#00ffe5"
+      },
+      "shape": {
+        "type": "circle"
+      },
+      "opacity": {
+        "value": 0.5,
+        "random": true
+      },
+      "size": {
+        "value": 3,
+        "random": true
+      },
+      "line_linked": {
+        "enable": true,
+        "distance": 150,
+        "color": "#00ffe5",
+        "opacity": 0.4,
+        "width": 1
+      },
+      "move": {
+        "enable": true,
+        "speed": 2
+      }
+    },
+    "interactivity": {
+      "detect_on": "canvas",
+      "events": {
+        "onhover": {
+          "enable": true,
+          "mode": "grab"
+        }
+      }
+    },
+    "retina_detect": true
+  });
+</script>
+
+<div class="custom-cursor"></div>
+
 </body>
 </html>
