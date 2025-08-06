@@ -1,38 +1,33 @@
-<script>
-  const words = [
-    "Turn Your Restaurant Data Into Profit",
-    "Track Sales. Slash Waste. Boost Revenue.",
-    "The Data Dish: Analytics for Real Growth"
-  ];
+// script.js
+const phrases = [
+  "Turn Your Restaurant Data Into Profit",
+  "Track Sales. Slash Waste. Boost Revenue.",
+  "The Data Dish: Analytics for Real Growth"
+];
 
-  let i = 0;
-  let j = 0;
-  let currentWord = '';
-  let isDeleting = false;
-  const typeSpeed = 100;
-  const deleteSpeed = 50;
-  const pauseTime = 2000;
+let i = 0;
+let j = 0;
+let isDeleting = false;
+let currentPhrase = '';
+let typewriter = document.getElementById("typewriter");
 
-  const typewriterElement = document.getElementById("typewriter-text");
+function type() {
+  currentPhrase = phrases[i];
+  typewriter.textContent = currentPhrase.slice(0, j);
 
-  function type() {
-    currentWord = words[i];
-
-    if (!isDeleting && j <= currentWord.length) {
-      typewriterElement.innerHTML = currentWord.slice(0, j++);
-      setTimeout(type, typeSpeed);
-    } else if (isDeleting && j >= 0) {
-      typewriterElement.innerHTML = currentWord.slice(0, j--);
-      setTimeout(type, deleteSpeed);
-    } else if (j === currentWord.length) {
-      isDeleting = true;
-      setTimeout(type, pauseTime);
-    } else if (j === 0 && isDeleting) {
-      isDeleting = false;
-      i = (i + 1) % words.length;
-      setTimeout(type, 500);
+  if (!isDeleting && j < currentPhrase.length) {
+    j++;
+    setTimeout(type, 100);
+  } else if (isDeleting && j > 0) {
+    j--;
+    setTimeout(type, 50);
+  } else {
+    isDeleting = !isDeleting;
+    if (!isDeleting) {
+      i = (i + 1) % phrases.length;
     }
+    setTimeout(type, 1000);
   }
+}
 
-  document.addEventListener("DOMContentLoaded", type);
-</script>
+document.addEventListener("DOMContentLoaded", type);
