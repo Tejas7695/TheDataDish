@@ -2287,3 +2287,47 @@ section {
     visibility: visible !important;
   }
 }
+/* ─── FINAL: Impact Section Debug ─── */
+
+/* 1) Always show the entire section & cards */
+#impact,
+#impact .impact-grid,
+#impact .impact-card {
+  display: flex !important;
+  visibility: visible !important;
+  opacity: 1 !important;
+}
+
+/* 2) Desktop: two-column, centered grid */
+#impact .impact-grid {
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 40px;
+}
+#impact .impact-card {
+  flex: 1 1 280px;
+  max-width: 360px;
+  margin: 0;
+}
+
+/* 3) Newsletter spacing so “Why…” never slides up underneath */
+#newsletter {
+  margin-bottom: 80px;
+}
+
+/* 4) Mobile stack & full-width cards */
+@media (max-width: 768px) {
+  #impact {
+    padding-top: 20px;
+  }
+  #impact .impact-grid {
+    flex-direction: column !important;
+    align-items: center !important;
+    gap: 20px !important;
+  }
+  #impact .impact-card {
+    width: 100% !important;
+    max-width: 100% !important;
+    margin-bottom: 20px !important;
+  }
+}
