@@ -577,7 +577,7 @@ h1.neon-text {
   top: 0;
   left: 0;
   width: 100%;
-  background-color: #0f0f0f;
+  background-color: #0f0f0f; /* solid background to block bleed-through */
   display: flex;
   justify-content: center;
   align-items: center;
@@ -2069,4 +2069,12 @@ section {
   * {
     max-width: 100vw !important;
   }
+}
+
+/* === SECTION BACKGROUND FIXES FOR MOBILE === */
+.our-story,
+.contact-section,
+.services,
+.impact-section {
+  background-color: #0f0f0f; /* solid background to prevent nav bleed-through */
 }
