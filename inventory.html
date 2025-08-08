@@ -4,7 +4,22 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Inventory Management | The Data Dish</title>
+
+  <!-- SEO Meta Tags -->
+  <title>Inventory Management | Track & Optimize Restaurant Stock | The Data Dish</title>
+  <meta name="description" content="The Data Dish simplifies restaurant inventory with smart tracking, automated restocking alerts, and real-time usage dashboards.">
+  <link rel="canonical" href="https://www.thedatadish.in/inventory.html">
+  <meta property="og:title" content="Restaurant Inventory Management | The Data Dish">
+  <meta property="og:description" content="Automated inventory control with live dashboards, waste reduction, and usage tracking. Built for restaurants.">
+  <meta property="og:url" content="https://www.thedatadish.in/inventory.html">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="https://www.thedatadish.in/path-to-your-image.jpg">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Restaurant Inventory Management | The Data Dish">
+  <meta name="twitter:description" content="Track stock levels in real-time, automate restocking, and reduce waste — all in one place.">
+  <meta name="twitter:image" content="https://www.thedatadish.in/path-to-your-image.jpg">
+
+  <!-- CSS & Libraries -->
   <link rel="stylesheet" href="style.css" />
   <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet" />
   <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
@@ -72,28 +87,28 @@
 
   <main class="service-detail" data-aos="fade-up">
     <section class="hero-subpage">
-      <h1>Inventory Management</h1>
-      <p>📦 Track stock levels in real-time, restock smartly, and never run out again.</p>
+      <h1>Smart Inventory Management for Restaurants</h1>
+      <p>📦 Track stock in real-time, predict shortages, and reduce food waste automatically.</p>
     </section>
 
     <section class="content">
-      <h2>Key Features</h2>
+      <h2>Automated Inventory Insights</h2>
       <div class="service-cards">
         <div class="card">
-          <h3>Predictive Restocking</h3>
-          <p>Get alerts when stock is low and suggestions on how much to reorder.</p>
+          <h3>Predictive Restocking Alerts</h3>
+          <p>Get automatic notifications when ingredients run low — so you're always stocked.</p>
         </div>
         <div class="card">
-          <h3>Category-Wise Trends</h3>
-          <p>Visualize inventory movement across categories and time.</p>
+          <h3>Category-Wise Movement Trends</h3>
+          <p>Understand which categories move fastest and plan your ordering better.</p>
         </div>
         <div class="card center-card">
-          <h3>Real-Time Dashboards</h3>
-          <p>Monitor inventory updates live and analyze availability per outlet.</p>
+          <h3>Real-Time Multi-Outlet Dashboards</h3>
+          <p>Track ingredient levels across all outlets instantly — from one dashboard.</p>
         </div>
       </div>
 
-      <h2>Interactive Ingredient Breakdown</h2>
+      <h2>Ingredient-Level Usage Analytics</h2>
       <div class="charts">
         <div class="chart-container">
           <canvas id="ingredientDonutChart"></canvas>
@@ -109,11 +124,11 @@
     <p>&copy; 2025 The Data Dish</p>
   </footer>
 
-  <!-- Libraries -->
+  <!-- JS Libraries -->
   <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
   <script>AOS.init({ duration: 1000, once: true });</script>
 
-  <!-- Interactive Chart Logic -->
+  <!-- Chart Logic -->
   <script>
     const ingredientData = {
       labels: ['Rice', 'Chicken', 'Potatoes', 'Eggs'],
@@ -141,7 +156,7 @@
           plugins: {
             title: {
               display: true,
-              text: 'Click Ingredient to View Usage',
+              text: 'Click an Ingredient to View Usage Over Time',
               color: '#fff',
               font: { size: 18 }
             },

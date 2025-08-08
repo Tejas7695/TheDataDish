@@ -5,13 +5,30 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Sales Tracking | The Data Dish</title>
-  <link rel="stylesheet" href="style.css"> <!-- links to your main CSS -->
-  <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet"> <!-- AOS animation library -->
+
+  <!-- Meta Description -->
+  <meta name="description" content="Track restaurant sales in real-time with The Data Dish’s automated POS dashboards. Spot trends, boost revenue, and make data-driven decisions easily.">
+
+  <!-- Canonical URL -->
+  <link rel="canonical" href="https://www.thedatadish.in/sales-tracking.html">
+
+  <!-- Open Graph Tags -->
+  <meta property="og:title" content="Sales Tracking | The Data Dish">
+  <meta property="og:description" content="Real-time restaurant sales dashboards to help you spot trends, increase profit, and grow your F&B business.">
+  <meta property="og:url" content="https://www.thedatadish.in/sales-tracking.html">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="https://www.thedatadish.in/path-to-sales-image.jpg">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Sales Tracking | The Data Dish">
+  <meta name="twitter:description" content="Automated sales dashboards for restaurants. Track, analyze, and grow your business with data.">
+  <meta name="twitter:image" content="https://www.thedatadish.in/path-to-sales-image.jpg">
+
+  <link rel="stylesheet" href="style.css">
+  <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
   <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-
-  
-
-</head>
+ </head>
 
 <body>
   <header>
@@ -27,139 +44,113 @@
 
   <main class="service-detail" data-aos="fade-up">
     <section class="hero-subpage">
-      <h1>Sales Tracking</h1>
-      <p>📈Know your numbers, grow your business.</p>
+      <h1>Sales Tracking Dashboard for Restaurants</h1>
+      <p>📈 Know your numbers, grow your business with real-time POS analytics.</p>
     </section>
 
     <section class="content">
-     <h2>What We Offer</h2>
-<div class="service-cards">
-  <div class="card">
-    <h3>Daily, Weekly & Monthly Dashboards</h3>
-    <p>Our custom dashboards give you real-time insight into your sales trends with clean visual breakdowns.</p>
-  </div>
-  <div class="card">
-    <h3>Automated Reports</h3>
-    <p>Receive scheduled reports in your inbox to stay updated without logging in daily.</p>
-  </div>
-    <div class="card center-card">
-    <h3>Top Dishes & Downtime Alerts</h3>
-    <p>Know exactly which menu items are killing it and which hours are slowing you down.</p>
-    
-  </div>
-</div>
-       <h2>Monthly Sales Overview</h2>
-<canvas id="salesChart" width="400" height="200"></canvas>
+      <h2>Key Sales Features</h2>
+      <div class="service-cards">
+        <div class="card">
+          <h3>Real-Time Sales Dashboards</h3>
+          <p>Get instant visibility into daily, weekly, and monthly performance with sleek, custom dashboards.</p>
+        </div>
+        <div class="card">
+          <h3>Scheduled Email Reports</h3>
+          <p>Receive auto-generated performance summaries without logging in every day.</p>
+        </div>
+        <div class="card center-card">
+          <h3>Menu Item Insights & Off-Hour Alerts</h3>
+          <p>Identify your best-selling dishes and optimize timing with intelligent downtime notifications.</p>
+        </div>
+      </div>
 
-<!-- 🔥 Glowing Divider -->
-<div class="glow-line"></div>
+      <h2>Visual Sales Overview</h2>
+      <canvas id="salesChart" width="400" height="200"></canvas>
 
-<!-- ✨ NEW Daily Sales Comparison Section -->
-<h2>Daily Sales Trend Comparison</h2>
-<canvas id="dailySalesChart" width="400" height="200"></canvas>
+      <div class="glow-line"></div>
+
+      <h2>Daily Sales Comparison</h2>
+      <canvas id="dailySalesChart" width="400" height="200"></canvas>
+    </section>
   </main>
 
   <footer>
     <p>&copy; 2025 The Data Dish</p>
   </footer>
 
-  <!-- AOS & JavaScript -->
-  <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+   <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
   <script>
-    AOS.init();
+    AOS.init({ duration: 1000, once: true });
   </script>
 
-  <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
-<script>
-  AOS.init({
-    duration: 1000,
-    once: true
-  });
-</script>
-
-<script>
-  const ctx = document.getElementById('salesChart').getContext('2d');
-  const salesChart = new Chart(ctx, {
-    type: 'line',
-    data: {
-      labels: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun'],
-      datasets: [{
-        label: 'Sales (₹)',
-        data: [12000, 15000, 17000, 14000, 19000, 22000],
-        backgroundColor: 'rgba(0, 123, 255, 0.2)',
-        borderColor: '#00ffff',
-        borderWidth: 2,
-        pointBackgroundColor: '#ffffff'
-      }]
-    },
-    options: {
-      responsive: true,
-      plugins: {
-        legend: {
-          labels: {
-            color: 'white'
-          }
-        }
+  <script>
+    const ctx = document.getElementById('salesChart').getContext('2d');
+    const salesChart = new Chart(ctx, {
+      type: 'line',
+      data: {
+        labels: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun'],
+        datasets: [{
+          label: 'Sales (₹)',
+          data: [12000, 15000, 17000, 14000, 19000, 22000],
+          backgroundColor: 'rgba(0, 123, 255, 0.2)',
+          borderColor: '#00ffff',
+          borderWidth: 2,
+          pointBackgroundColor: '#ffffff'
+        }]
       },
-      scales: {
-        x: {
-          ticks: {
-            color: 'white'
-          }
+      options: {
+        responsive: true,
+        plugins: {
+          legend: { labels: { color: 'white' } }
         },
-        y: {
-          ticks: {
-            color: 'white'
-          }
+        scales: {
+          x: { ticks: { color: 'white' } },
+          y: { ticks: { color: 'white' } }
         }
       }
-    }
-  });
-</script>
+    });
+  </script>
 
-<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-<script>
-  const ctx2 = document.getElementById('dailySalesChart').getContext('2d');
-  const dailySalesChart = new Chart(ctx2, {
-    type: 'bar',
-    data: {
-      labels: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'],
-      datasets: [{
-        label: 'Daily Sales ($)',
-        data: [450, 520, 600, 430, 700, 880, 650],
-        backgroundColor: 'rgba(75, 192, 192, 0.7)',
-        borderRadius: 6,
-        borderSkipped: false
-      }]
-    },
-    options: {
-      responsive: true,
-      plugins: {
-        legend: {
-          display: false
-        },
-        tooltip: {
-          callbacks: {
-            label: function(context) {
-              return `$${context.parsed.y}`;
+  <script>
+    const ctx2 = document.getElementById('dailySalesChart').getContext('2d');
+    const dailySalesChart = new Chart(ctx2, {
+      type: 'bar',
+      data: {
+        labels: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'],
+        datasets: [{
+          label: 'Daily Sales ($)',
+          data: [450, 520, 600, 430, 700, 880, 650],
+          backgroundColor: 'rgba(75, 192, 192, 0.7)',
+          borderRadius: 6,
+          borderSkipped: false
+        }]
+      },
+      options: {
+        responsive: true,
+        plugins: {
+          legend: { display: false },
+          tooltip: {
+            callbacks: {
+              label: function (context) {
+                return `$${context.parsed.y}`;
+              }
             }
           }
-        }
-      },
-      scales: {
-        y: {
-          beginAtZero: true,
-          ticks: {
-            callback: function(value) {
-              return `$${value}`;
+        },
+        scales: {
+          y: {
+            beginAtZero: true,
+            ticks: {
+              callback: function (value) {
+                return `$${value}`;
+              }
             }
           }
         }
       }
-    }
-  });
-</script>
+    });
+  </script>
 
-</body>
-
+ </body>
 </html>
