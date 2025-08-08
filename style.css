@@ -1064,7 +1064,8 @@ body {
   border: 1px solid rgba(0, 255, 229, 0.3);
   border-radius: 15px;
   padding: 30px;
-  width: 280px;
+  width: 100%;
+  max-width: 280px; /* ✅ Limit max width, but allow it to shrink */
   box-shadow: 0 0 20px rgba(0, 255, 229, 0.2);
   backdrop-filter: blur(10px);
   transition: transform 0.4s ease, box-shadow 0.4s ease;
@@ -2137,5 +2138,16 @@ section {
 
   body.mobile-nav-open .main-nav ul {
     display: flex;
+  }
+}
+@media (max-width: 768px) {
+  .impact-grid {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .impact-card {
+    width: 90%;
+    max-width: 320px;
   }
 }
