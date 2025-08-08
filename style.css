@@ -615,7 +615,13 @@ h1.neon-text {
 }
 
 body {
-  padding-top: 80px;
+   background: #0d1117;
+  font-family: Poppins, sans-serif;
+  background: linear-gradient(135deg, #0f0f0f, #1c1c1c);
+  min-height: 100vh;
+  padding: 80px 20px 20px 20px;  /* <-- This ensures top spacing for the fixed navbar */
+  max-width: 100%;
+  overflow-x: hidden;
 }
 
 /* === SERVICE SECTION === */
