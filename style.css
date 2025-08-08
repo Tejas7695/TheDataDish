@@ -2078,3 +2078,11 @@ section {
 .impact-section {
   background-color: #0f0f0f; /* solid background to prevent nav bleed-through */
 }
+/* === Fix spacing between newsletter and next section === */
+.newsletter-section {
+  margin-bottom: 80px;
+}
+
+.impact-section {
+  padding-top: 60px;
+}
