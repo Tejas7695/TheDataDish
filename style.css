@@ -2371,3 +2371,27 @@ section {
     height: auto !important;
   }
 }
+@media (max-width: 768px) {
+  .services-grid,
+  .service-row {
+    display: flex !important;
+    flex-direction: column;
+    gap: 20px;
+    align-items: center;
+    opacity: 1 !important;
+    visibility: visible !important;
+  }
+
+  .service-card {
+    display: block !important;
+    width: 90%;
+    max-width: 320px;
+    margin: 0 auto;
+    opacity: 1 !important;
+    visibility: visible !important;
+  }
+
+  canvas {
+    display: none; /* optional if graph is large */
+  }
+}
