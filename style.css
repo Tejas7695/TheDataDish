@@ -2216,3 +2216,36 @@ section {
     max-width: 100%;
   }
 }
+/* ==== Subpage Mobile Alignment Fix ==== */
+@media (max-width: 768px) {
+  /* Make the content area flush/full-width */
+  .service-detail .content,
+  .hero-subpage,
+  .service-detail .content h2,
+  .service-detail .content .service-cards {
+    width: 100% !important;
+    max-width: 100% !important;
+    padding: 20px !important;
+    box-sizing: border-box;
+    margin: 0 auto !important;
+  }
+
+  /* Stack the cards vertically */
+  .service-cards {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 20px !important;
+  }
+  .service-cards .card {
+    width: 100% !important;
+    max-width: 100% !important;
+  }
+
+  /* Tweak the nav on mobile */
+  .main-nav ul,
+  nav ul {
+    flex-direction: column !important;
+    gap: 15px !important;
+    padding: 10px 0 !important;
+  }
+}
