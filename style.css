@@ -2331,3 +2331,53 @@ section {
     margin-bottom: 20px !important;
   }
 }
+/* ─── Impact Section: horizontal on desktop, vertical on mobile ─── */
+.impact-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 40px;
+  flex-direction: row;       /* horizontal on desktop */
+}
+
+.impact-card {
+  flex: 0 1 280px;           /* each card sits at ~280px */
+  width: auto;               /* allow flex to size */
+}
+
+@media (max-width: 768px) {
+  .impact-grid {
+    flex-direction: column;  /* vertical on mobile */
+    align-items: center;
+  }
+  .impact-card {
+    width: 90%;              /* nearly full-width */
+    max-width: 320px;        /* cap for readability */
+  }
+}
+/* ─── Impact Section: force one-row on desktop, vertical on mobile ─── */
+.impact-grid {
+  display: flex;
+  flex-direction: row;    /* horizontal on desktop */
+  flex-wrap: nowrap;      /* no wrapping */
+  justify-content: center;
+  gap: 40px;
+  margin-top: 40px;       /* space under the title */
+  overflow-x: auto;       /* allow scroll if too wide */
+}
+
+.impact-card {
+  flex: 0 0 280px;        /* fixed 280px width, no shrink */
+}
+
+@media (max-width: 768px) {
+  .impact-grid {
+    flex-direction: column;  /* vertical on phone */
+    align-items: center;
+    gap: 20px;
+  }
+  .impact-card {
+    width: 90%;            /* almost full width on mobile */
+    max-width: 320px;
+  }
+}
