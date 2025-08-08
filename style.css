@@ -2395,3 +2395,42 @@ section {
     display: none; /* optional if graph is large */
   }
 }
+@media (max-width: 768px) {
+  .service-cards {
+    flex-direction: column !important;
+    align-items: center;
+    padding: 0 1rem;
+  }
+
+  .card {
+    width: 100% !important;
+    max-width: 100% !important;
+    text-align: center;
+  }
+
+  .charts {
+    flex-direction: column !important;
+    gap: 2rem;
+    padding: 0 1rem;
+    align-items: center;
+  }
+
+  .chart-container {
+    width: 100% !important;
+    max-width: 100% !important;
+    padding: 1rem !important;
+    box-sizing: border-box;
+  }
+
+  canvas {
+    max-width: 100% !important;
+    height: auto !important;
+    display: block !important;
+  }
+
+  .hero-subpage h1,
+  .hero-subpage p {
+    text-align: center;
+    padding: 0 1rem;
+  }
+}
