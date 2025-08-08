@@ -2196,6 +2196,14 @@ section {
   visibility: visible !important;
 }
 
+/* Only apply layout fix to impact-grid (which should be flex) */
+.impact-grid {
+  display: flex !important;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 40px;
+}
+
 /* Mobile layout adjustment */
 @media (max-width: 768px) {
   .impact-grid {
@@ -2279,127 +2287,28 @@ section {
     visibility: visible !important;
   }
 }
-/* ─── FINAL: Impact Section Debug ─── */
 
-/* 1) Always show the entire section & cards */
-#impact,
-#impact .impact-grid,
-#impact .impact-card {
-  display: flex !important;
-  visibility: visible !important;
-  opacity: 1 !important;
-}
-
-/* 2) Desktop: two-column, centered grid */
-#impact .impact-grid {
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 40px;
-}
-#impact .impact-card {
-  flex: 1 1 280px;
-  max-width: 360px;
-  margin: 0;
-}
-
-/* 3) Newsletter spacing so “Why…” never slides up underneath */
-#newsletter {
-  margin-bottom: 80px;
-}
-
-/* 4) Mobile stack & full-width cards */
-@media (max-width: 768px) {
-  #impact {
-    padding-top: 20px;
-  }
-  #impact .impact-grid {
-    flex-direction: column !important;
-    align-items: center !important;
-    gap: 20px !important;
-  }
-  #impact .impact-card {
-    width: 100% !important;
-    max-width: 100% !important;
-    margin-bottom: 20px !important;
-  }
-}
-/* ─── Impact Section: horizontal on desktop, vertical on mobile ─── */
-.impact-grid {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 40px;
-  flex-direction: row;       /* horizontal on desktop */
-}
-
-.impact-card {
-  flex: 0 1 280px;           /* each card sits at ~280px */
-  width: auto;               /* allow flex to size */
-}
-
+/* ✅ FINAL FIX: Responsive Impact Section */
 @media (max-width: 768px) {
   .impact-grid {
-    flex-direction: column;  /* vertical on mobile */
-    align-items: center;
-  }
-  .impact-card {
-    width: 90%;              /* nearly full-width */
-    max-width: 320px;        /* cap for readability */
-  }
-}
-/* ─── Impact Section: force one-row on desktop, vertical on mobile ─── */
-.impact-grid {
-  display: flex;
-  flex-direction: row;    /* horizontal on desktop */
-  flex-wrap: nowrap;      /* no wrapping */
-  justify-content: center;
-  gap: 40px;
-  margin-top: 40px;       /* space under the title */
-  overflow-x: auto;       /* allow scroll if too wide */
-}
-
-.impact-card {
-  flex: 0 0 280px;        /* fixed 280px width, no shrink */
-}
-
-@media (max-width: 768px) {
-  .impact-grid {
-    flex-direction: column;  /* vertical on phone */
+    flex-direction: column;
     align-items: center;
     gap: 20px;
   }
-  .impact-card {
-    width: 90%;            /* almost full width on mobile */
-    max-width: 320px;
-  }
-}
-/* ─── Impact Section Layout ─── */
-.impact-section {
-  width: 100%;
-}
 
-.impact-grid {
-  display: flex;
-  flex-direction: row;    /* horizontal row on desktop */
-  flex-wrap: nowrap;
-  justify-content: center;
-  gap: 40px;
-  margin-top: 40px;
-  overflow-x: auto;       /* prevent overflow hiding */
-}
-
-.impact-card {
-  flex: 0 0 280px;        /* fixed width, no shrink */
-}
-
-@media (max-width: 768px) {
-  .impact-grid {
-    flex-direction: column;  /* vertical stack on mobile */
-    align-items: center;
-    gap: 20px;
-  }
   .impact-card {
     width: 90%;
-    max-width: 320px;
+    max-width: 400px;
+    margin: 0 auto;
+    text-align: center;
+  }
+
+  .impact-section,
+  .impact-card,
+  .impact-grid {
+    opacity: 1 !important;
+    visibility: visible !important;
+    display: flex !important;
+    flex-direction: column;
   }
 }
