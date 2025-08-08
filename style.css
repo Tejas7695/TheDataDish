@@ -2102,3 +2102,40 @@ section {
 .subscribe-btn {
   box-shadow: 0 0 12px rgba(0, 255, 255, 0.4);
 }
+
+/* === Responsive Mobile Nav Toggle === */
+@media (max-width: 768px) {
+  .hamburger {
+    display: flex;
+    flex-direction: column;
+    cursor: pointer;
+    gap: 4px;
+    margin-left: auto;
+    margin-right: 20px;
+  }
+
+  .hamburger div {
+    width: 25px;
+    height: 3px;
+    background-color: #00ffe5;
+    border-radius: 2px;
+  }
+
+  .main-nav ul {
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    position: absolute;
+    top: 60px;
+    left: 0;
+    background-color: #0f0f0f;
+    width: 100%;
+    padding: 60px 0 20px;
+    z-index: 9999;
+  }
+
+  body.mobile-nav-open .main-nav ul {
+    display: flex;
+  }
+}

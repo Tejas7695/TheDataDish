@@ -148,10 +148,15 @@
 </head>
 
 <body>
-  <div id="particles-js"></div>
+   <div id="particles-js"></div>
 
-  <!-- NAVIGATION BAR -->
+  <!-- ✅ Navigation Bar -->
   <nav class="main-nav">
+    <div class="hamburger">
+      <div></div>
+      <div></div>
+      <div></div>
+    </div>
     <ul class="nav-links">
       <li><a href="#hero" class="nav-link">Home</a></li>
       <li><a href="#services" class="nav-link">Services</a></li>
@@ -339,5 +344,40 @@
 
   <!-- Back to Top Button -->
   <a href="#hero" class="back-to-top"><i class="fas fa-arrow-up"></i></a>
+
+  <div class="hamburger">
+  <span></span>
+  <span></span>
+  <span></span>
+</div>
+
+<script>
+  // Back to top button visibility
+  const backToTop = document.querySelector(".back-to-top");
+
+  window.addEventListener("scroll", () => {
+    if (window.pageYOffset > 400) {
+      backToTop.style.display = "block";
+    } else {
+      backToTop.style.display = "none";
+    }
+  });
+
+  // Custom cursor movement
+  const cursor = document.querySelector(".custom-cursor");
+  document.addEventListener("mousemove", (e) => {
+    cursor.style.top = `${e.clientY}px`;
+    cursor.style.left = `${e.clientX}px`;
+  });
+
+  // Mobile nav hamburger toggle
+  const hamburger = document.querySelector('.hamburger');
+  if (hamburger) {
+    hamburger.addEventListener('click', function () {
+      document.body.classList.toggle('mobile-nav-open');
+    });
+  }
+</script>
+
 </body>
 </html>
