@@ -2249,3 +2249,41 @@ section {
     padding: 10px 0 !important;
   }
 }
+/* ==== Final Fix: Impact Section Responsive ==== */
+  
+/* Ensure newsletter above it isn’t overlapping */
+.newsletter {
+  margin-bottom: 60px;  /* add space before “Why Restaurants…” */
+}
+
+/* Laptop: center two-column layout under heading */
+.impact-section .impact-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 40px;
+}
+.impact-section .impact-card {
+  flex: 1 1 280px;      /* allow cards to sit side-by-side if there's room */
+  max-width: 360px;
+}
+
+/* Mobile (max-width: 768px): stack, full-width, visible */
+@media (max-width: 768px) {
+  .impact-section {
+    padding-top: 20px;   /* tighten up vertical spacing */
+  }
+  .impact-section .impact-grid {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    gap: 20px !important;
+  }
+  .impact-section .impact-card {
+    width: 100% !important;
+    max-width: 100% !important;
+    margin-bottom: 20px !important;
+    opacity: 1 !important;
+    visibility: visible !important;
+  }
+}
