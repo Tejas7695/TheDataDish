@@ -1066,11 +1066,13 @@ body {
   border: 1px solid rgba(0, 255, 229, 0.3);
   border-radius: 15px;
   padding: 30px;
-  width: 280px;
+  width: 280px; /* fixed width on laptop and desktop */
+  max-width: 90%;
   box-shadow: 0 0 20px rgba(0, 255, 229, 0.2);
   backdrop-filter: blur(10px);
   transition: transform 0.4s ease, box-shadow 0.4s ease;
   color: #fff;
+  text-align: center;
 }
 
 .impact-card:hover {
@@ -2186,14 +2188,23 @@ section {
   }
 }
 
-/* Always show impact content */
+/* Always show impact content safely */
 .impact-section,
 .impact-card,
 .impact-grid {
   opacity: 1 !important;
   visibility: visible !important;
-  display: flex !important;
 }
+
+/* Only apply layout fix to impact-grid (which should be flex) */
+.impact-grid {
+  display: flex !important;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 40px;
+}
+
+/* Mobile layout adjustment */
 @media (max-width: 768px) {
   .impact-grid {
     flex-direction: column;
@@ -2201,7 +2212,7 @@ section {
   }
 
   .impact-card {
-    width: 90%; /* Stretch nicely on mobile */
-    max-width: 100%; /* Avoid overflow */
+    width: 90%;
+    max-width: 100%;
   }
 }
