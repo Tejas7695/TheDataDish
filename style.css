@@ -1919,7 +1919,16 @@ section {
     box-sizing: border-box;
   }
 
- 
+  .services-grid,
+  .impact-grid,
+  .service-row {
+    flex-direction: column !important;
+    display: flex !important;
+    flex-wrap: wrap;
+    gap: 20px;
+    align-items: center;
+  }
+
   .service-card,
   .impact-card,
   .card {
@@ -2164,6 +2173,12 @@ section {
     margin: 0 auto !important;
   }
 
+  /* Stack the cards vertically */
+  .service-cards {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 20px !important;
+  }
   .service-cards .card {
     width: 100% !important;
     max-width: 100% !important;
@@ -2307,30 +2322,3 @@ section {
     max-width: 100%;
   }
 }
-/* ✅ Mobile fix: Stack service cards and impact cards vertically */
-@media (max-width: 768px) {
-  .impact-grid {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 30px;
-  }
-
-  .impact-card {
-    width: 90%;
-    max-width: 100%;
-  }
-
-  .service-cards {
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-    align-items: center;
-  }
-
-  .service-card {
-    width: 90%;
-    max-width: 100%;
-  }
-}
-
