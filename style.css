@@ -1897,3 +1897,70 @@ section {
     height: auto !important;
   }
 }
+
+/* ✅ Critical Mobile Layout Fix */
+@media (max-width: 768px) {
+  html, body {
+    overflow-x: hidden;
+    width: 100%;
+    max-width: 100vw;
+  }
+
+  section,
+  .hero,
+  .impact-section,
+  .services,
+  .our-story,
+  .contact-section,
+  .newsletter,
+  .footer {
+    display: block;
+    width: 100%;
+    max-width: 100vw;
+    padding-left: 20px;
+    padding-right: 20px;
+    box-sizing: border-box;
+  }
+
+  .services-grid,
+  .impact-grid,
+  .service-row {
+    flex-direction: column !important;
+    display: flex !important;
+    flex-wrap: wrap;
+    gap: 20px;
+    align-items: center;
+  }
+
+  .service-card,
+  .impact-card,
+  .card {
+    width: 100% !important;
+    max-width: 100% !important;
+  }
+
+  .hero-content {
+    padding: 20px;
+    text-align: center;
+  }
+
+  .hero h1 {
+    font-size: 2rem;
+  }
+
+  .hero p {
+    font-size: 1rem;
+    color: #ccc;
+  }
+
+  .our-story h2,
+  .section-title {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+  }
+
+  .our-story p {
+    font-size: 1rem;
+    line-height: 1.6;
+  }
+}
