@@ -2086,3 +2086,19 @@ section {
 .impact-section {
   padding-top: 60px;
 }
+/* === FIX OVERLAP BETWEEN NEWSLETTER AND WHY SECTION === */
+.newsletter-section {
+  margin-bottom: 100px;   /* increase spacing below the glowing subscribe */
+  padding-bottom: 40px;
+  position: relative;
+  z-index: 1;
+}
+
+.impact-section {
+  position: relative;
+  z-index: 0;
+}
+
+.subscribe-btn {
+  box-shadow: 0 0 12px rgba(0, 255, 255, 0.4);
+}
