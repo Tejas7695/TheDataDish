@@ -2180,3 +2180,14 @@ section {
   visibility: visible !important;
   display: flex !important;
 }
+@media (max-width: 768px) {
+  .impact-grid {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .impact-card {
+    width: 90%; /* Stretch nicely on mobile */
+    max-width: 100%; /* Avoid overflow */
+  }
+}
