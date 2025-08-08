@@ -3432,3 +3432,42 @@ footer-links,
     overflow-x: hidden;
   }
 
+/* Fix for body zoom and overflow */
+body {
+  max-width: 100vw;
+  overflow-x: hidden;
+}
+
+/* Mobile Navbar fix */
+@media (max-width: 768px) {
+  nav ul,
+  .nav-links {
+    flex-direction: column;
+    gap: 12px;
+    align-items: center;
+    padding: 10px 0;
+  }
+
+  nav ul li {
+    width: 100%;
+    text-align: center;
+  }
+
+  nav a {
+    display: block;
+    width: 100%;
+    padding: 10px 0;
+  }
+}
+
+/* Ensure all elements respect screen width */
+img,
+canvas,
+section,
+div,
+header,
+footer {
+  max-width: 100%;
+  overflow-x: hidden;
+  box-sizing: border-box;
+}
