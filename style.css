@@ -1038,6 +1038,8 @@ body {
   }
 }
 
+/* === IMPACT SECTION STYLING === */
+
 .impact-section {
   padding: 100px 40px;
   background: linear-gradient(145deg, #0f0f0f, #111);
@@ -1064,8 +1066,7 @@ body {
   border: 1px solid rgba(0, 255, 229, 0.3);
   border-radius: 15px;
   padding: 30px;
-  width: 100%;
-  max-width: 280px; /* ✅ Limit max width, but allow it to shrink */
+  width: 280px;
   box-shadow: 0 0 20px rgba(0, 255, 229, 0.2);
   backdrop-filter: blur(10px);
   transition: transform 0.4s ease, box-shadow 0.4s ease;
@@ -1093,6 +1094,19 @@ body {
 .impact-card p {
   font-size: 1rem;
   color: #ddd;
+}
+
+/* === RESPONSIVE FIX FOR MOBILE === */
+@media (max-width: 768px) {
+  .impact-grid {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .impact-card {
+    width: 90%;
+    max-width: 100%;
+  }
 }
 
 .services {
