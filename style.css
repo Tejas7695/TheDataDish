@@ -1054,26 +1054,9 @@ body {
   text-shadow: 0 0 10px #00ffe5;
 }
 
-.impact-grid {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 40px;
-}
 
-.impact-card {
-  background: rgba(255, 255, 255, 0.05);
-  border: 1px solid rgba(0, 255, 229, 0.3);
-  border-radius: 15px;
-  padding: 30px;
-  width: 280px; /* fixed width on laptop and desktop */
-  max-width: 90%;
-  box-shadow: 0 0 20px rgba(0, 255, 229, 0.2);
-  backdrop-filter: blur(10px);
-  transition: transform 0.4s ease, box-shadow 0.4s ease;
-  color: #fff;
-  text-align: center;
-}
+
+
 
 .impact-card:hover {
   transform: translateY(-10px);
@@ -1100,15 +1083,9 @@ body {
 
 /* === RESPONSIVE FIX FOR MOBILE === */
 @media (max-width: 768px) {
-  .impact-grid {
-    flex-direction: column;
-    align-items: center;
-  }
+  
 
-  .impact-card {
-    width: 90%;
-    max-width: 100%;
-  }
+  
 }
 
 .services {
@@ -1836,10 +1813,7 @@ section {
     align-items: center;
   }
 
-  .service-card, .impact-card {
-    width: 90% !important;
-    margin-bottom: 20px;
-  }
+  .service-card, 
 
   .hero-content {
     padding: 20px;
@@ -1944,17 +1918,6 @@ section {
     padding-right: 20px;
     box-sizing: border-box;
   }
-
-  .services-grid,
-  .impact-grid,
-  .service-row {
-    flex-direction: column !important;
-    display: flex !important;
-    flex-wrap: wrap;
-    gap: 20px;
-    align-items: center;
-  }
-
   .service-card,
   .impact-card,
   .card {
@@ -2027,12 +1990,7 @@ section {
 
   .service-row,
   .services-grid,
-  .impact-grid {
-    display: flex !important;
-    flex-direction: column !important;
-    align-items: center !important;
-    gap: 20px !important;
-  }
+  
 
   canvas {
     display: none !important;
@@ -2157,15 +2115,9 @@ section {
   }
 }
 @media (max-width: 768px) {
-  .impact-grid {
-    flex-direction: column;
-    align-items: center;
-  }
+  
 
-  .impact-card {
-    width: 90%;
-    max-width: 320px;
-  }
+  
 }
 /* === Mobile Fix for Impact Section Visibility === */
 @media (max-width: 768px) {
@@ -2177,44 +2129,24 @@ section {
     padding: 60px 20px;
   }
 
-  .impact-grid {
-    flex-direction: column;
-    align-items: center;
-  }
+  
 
-  .impact-card {
-    width: 90%;
-    max-width: 320px;
-  }
+  
 }
 
 /* Always show impact content safely */
 .impact-section,
 .impact-card,
-.impact-grid {
-  opacity: 1 !important;
-  visibility: visible !important;
-}
+
 
 /* Only apply layout fix to impact-grid (which should be flex) */
-.impact-grid {
-  display: flex !important;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 40px;
-}
+
 
 /* Mobile layout adjustment */
 @media (max-width: 768px) {
-  .impact-grid {
-    flex-direction: column;
-    align-items: center;
-  }
+  
 
-  .impact-card {
-    width: 90%;
-    max-width: 100%;
-  }
+  
 }
 /* ==== Subpage Mobile Alignment Fix ==== */
 @media (max-width: 768px) {
@@ -2257,60 +2189,27 @@ section {
 }
 
 /* Laptop: center two-column layout under heading */
-.impact-section .impact-grid {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 40px;
-}
-.impact-section .impact-card {
-  flex: 1 1 280px;      /* allow cards to sit side-by-side if there's room */
-  max-width: 360px;
-}
+.impact-section 
+.impact-section 
 
 /* Mobile (max-width: 768px): stack, full-width, visible */
 @media (max-width: 768px) {
   .impact-section {
     padding-top: 20px;   /* tighten up vertical spacing */
   }
-  .impact-section .impact-grid {
-    display: flex !important;
-    flex-direction: column !important;
-    align-items: center !important;
-    gap: 20px !important;
-  }
-  .impact-section .impact-card {
-    width: 100% !important;
-    max-width: 100% !important;
-    margin-bottom: 20px !important;
-    opacity: 1 !important;
-    visibility: visible !important;
-  }
+  .impact-section 
+  .impact-section 
 }
 
 /* ✅ FINAL FIX: Responsive Impact Section */
 @media (max-width: 768px) {
-  .impact-grid {
-    flex-direction: column;
-    align-items: center;
-    gap: 20px;
-  }
+  
 
-  .impact-card {
-    width: 90%;
-    max-width: 400px;
-    margin: 0 auto;
-    text-align: center;
-  }
+  
 
   .impact-section,
   .impact-card,
-  .impact-grid {
-    opacity: 1 !important;
-    visibility: visible !important;
-    display: flex !important;
-    flex-direction: column;
-  }
+  
 }
 @media (max-width: 768px) {
   .card-row {
@@ -2340,25 +2239,9 @@ section {
   text-shadow: 0 0 10px #00ffe5;
 }
 
-.impact-grid {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 40px;
-}
 
-.impact-card {
-  background: rgba(255, 255, 255, 0.05);
-  border: 1px solid rgba(0, 255, 229, 0.3);
-  border-radius: 15px;
-  padding: 30px;
-  width: 100%;
-  max-width: 280px;
-  box-shadow: 0 0 20px rgba(0, 255, 229, 0.2);
-  backdrop-filter: blur(10px);
-  transition: transform 0.4s ease, box-shadow 0.4s ease;
-  color: #fff;
-}
+
+
 
 .impact-card:hover {
   transform: translateY(-10px);
@@ -2382,32 +2265,109 @@ section {
   font-size: 1rem;
   color: #ddd;
 }
-
-/* ✅ FINAL MOBILE-ONLY FIX */
 @media (max-width: 768px) {
+  
+
+  
+}
+
+
+/* Impact Grid - Desktop */
+.impact-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 40px;
+}
+
+/* Impact Card - Shared Styling */
+.impact-card {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(0, 255, 229, 0.3);
+  border-radius: 15px;
+  padding: 30px;
+  width: 280px;
+  box-shadow: 0 0 20px rgba(0, 255, 229, 0.2);
+  backdrop-filter: blur(10px);
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+  color: #fff;
+}
+
+/* Impact Card Hover Effect */
+.impact-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 0 30px rgba(0, 255, 229, 0.5);
+}
+
+/* RESPONSIVE: Mobile Fix */
+@media (max-width: 768px) {
+  .impact-grid {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .impact-card {
+    width: 90%;
+    max-width: 100%;
+  }
+}
+
+/* ✅ FINAL Mobile-Only Fix */
+@media (max-width: 768px) {
+
+  /* Fix overall layout padding/margin */
+  body,
+  html {
+    padding: 0;
+    margin: 0;
+    overflow-x: hidden;
+  }
+
+  /* Prevent horizontal scroll issues */
+  * {
+    box-sizing: border-box;
+    max-width: 100%;
+  }
+
+  /* Force titles and sections to align properly */
+  h1, h2, h3, .section-title {
+    text-align: center !important;
+    padding: 0 20px !important;
+  }
+
+  /* Stack elements vertically and center them */
   .impact-grid,
   .services-grid,
-  .service-row {
+  .card-row,
+  .infographic-section {
     display: flex !important;
     flex-direction: column !important;
     align-items: center !important;
-    gap: 20px !important;
-    flex-wrap: wrap !important;
+    gap: 20px;
+    padding: 0 20px;
   }
 
+  /* Ensure individual cards scale properly */
   .impact-card,
   .service-card,
   .card {
-    display: block !important;
     width: 90% !important;
     max-width: 100% !important;
-    margin: 0 auto !important;
+    display: block !important;
+    margin: 0 auto;
   }
 
-  canvas,
-  #particles-js,
+  /* Hide any non-essential decorative elements */
   .custom-cursor,
+  #particles-js,
   .color-shift-bg {
     display: none !important;
+  }
+
+  /* Show canvas/chart sections if hidden accidentally */
+  canvas {
+    display: block !important;
+    max-width: 100% !important;
+    height: auto !important;
   }
 }
