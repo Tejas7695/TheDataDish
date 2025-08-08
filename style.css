@@ -2196,14 +2196,6 @@ section {
   visibility: visible !important;
 }
 
-/* Only apply layout fix to impact-grid (which should be flex) */
-.impact-grid {
-  display: flex !important;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 40px;
-}
-
 /* Mobile layout adjustment */
 @media (max-width: 768px) {
   .impact-grid {
@@ -2378,6 +2370,36 @@ section {
   }
   .impact-card {
     width: 90%;            /* almost full width on mobile */
+    max-width: 320px;
+  }
+}
+/* ─── Impact Section Layout ─── */
+.impact-section {
+  width: 100%;
+}
+
+.impact-grid {
+  display: flex;
+  flex-direction: row;    /* horizontal row on desktop */
+  flex-wrap: nowrap;
+  justify-content: center;
+  gap: 40px;
+  margin-top: 40px;
+  overflow-x: auto;       /* prevent overflow hiding */
+}
+
+.impact-card {
+  flex: 0 0 280px;        /* fixed width, no shrink */
+}
+
+@media (max-width: 768px) {
+  .impact-grid {
+    flex-direction: column;  /* vertical stack on mobile */
+    align-items: center;
+    gap: 20px;
+  }
+  .impact-card {
+    width: 90%;
     max-width: 320px;
   }
 }
