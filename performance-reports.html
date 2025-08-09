@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Performance & Profitability Reports | The Data Dish</title>
+
+  <!-- Meta Description -->
+  <meta name="description" content="Simplified performance & profitability reports for restaurants. Track trends, optimize operations, and increase profit.">
+
+  <!-- Canonical URL -->
+  <link rel="canonical" href="https://www.thedatadish.in/performance-reports.html">
+
+  <!-- Open Graph Tags -->
+  <meta property="og:title" content="Performance & Profitability Reports | The Data Dish">
+  <meta property="og:description" content="Simplified performance & profitability reports for restaurants to boost profit and efficiency.">
+  <meta property="og:url" content="https://www.thedatadish.in/performance-reports.html">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="https://www.thedatadish.in/path-to-performance-image.jpg">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Performance & Profitability Reports | The Data Dish">
+  <meta name="twitter:description" content="Track performance trends and profitability with interactive reports.">
+  <meta name="twitter:image" content="https://www.thedatadish.in/path-to-performance-image.jpg">
+
+  <link rel="stylesheet" href="style.css">
+  <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+
+<body>
+  <header>
+    <nav>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="sales-tracking.html">Sales Tracking</a></li>
+        <li><a href="index.html#services" class="active">Services</a></li>
+        <li><a href="index.html#contact">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main class="service-detail" data-aos="fade-up">
+    <section class="hero-subpage">
+      <h1>Performance & Profitability Reports</h1>
+      <p>📈 Receive simplified reports showing what's working — and what's not.</p>
+    </section>
+
+    <section class="content">
+      <h2>Key Benefits</h2>
+      <div class="service-cards">
+        <div class="card">
+          <h3>Profit Margin Tracking</h3>
+          <p>Monitor profit margins over time to make strategic decisions that boost revenue.</p>
+        </div>
+        <div class="card">
+          <h3>Revenue vs Expenses Analysis</h3>
+          <p>Quickly identify areas where costs can be reduced without sacrificing quality.</p>
+        </div>
+        <div class="card center-card">
+          <h3>Custom Interactive Reports</h3>
+          <p>Tailor your data visuals to show exactly what matters for your business growth.</p>
+        </div>
+      </div>
+
+      <h2>Monthly Profit Margin</h2>
+      <canvas id="profitMarginChart" width="400" height="200"></canvas>
+
+      <div class="glow-line"></div>
+
+      <h2>Revenue vs Expenses</h2>
+      <canvas id="revExpChart" width="400" height="200"></canvas>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 The Data Dish</p>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+  <script>
+    AOS.init({ duration: 1000, once: true });
+  </script>
+
+  <!-- Profit Margin Chart -->
+  <script>
+    const ctx1 = document.getElementById('profitMarginChart').getContext('2d');
+    new Chart(ctx1, {
+      type: 'line',
+      data: {
+        labels: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun'],
+        datasets: [{
+          label: 'Profit Margin (%)',
+          data: [22, 25, 21, 27, 30, 28],
+          fill: true,
+          backgroundColor: 'rgba(0, 255, 200, 0.15)',
+          borderColor: '#00ffff',
+          tension: 0.4,
+          borderWidth: 2,
+          pointBackgroundColor: '#ffffff',
+          pointHoverRadius: 6,
+          pointHoverBackgroundColor: '#ff00ff'
+        }]
+      },
+      options: {
+        responsive: true,
+        plugins: {
+          legend: { labels: { color: 'white' } },
+          tooltip: { mode: 'index', intersect: false }
+        },
+        interaction: { mode: 'nearest', axis: 'x', intersect: false },
+        scales: {
+          x: { ticks: { color: 'white' } },
+          y: { ticks: { color: 'white', callback: v => v + '%' } }
+        }
+      }
+    });
+  </script>
+
+  <!-- Revenue vs Expenses Chart -->
+  <script>
+    const ctx2 = document.getElementById('revExpChart').getContext('2d');
+    new Chart(ctx2, {
+      type: 'bar',
+      data: {
+        labels: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun'],
+        datasets: [
+          {
+            label: 'Revenue (₹)',
+            data: [120000, 135000, 150000, 140000, 160000, 175000],
+            backgroundColor: 'rgba(0, 255, 200, 0.7)',
+            borderRadius: 6,
+            borderSkipped: false
+          },
+          {
+            label: 'Expenses (₹)',
+            data: [80000, 85000, 90000, 87000, 95000, 100000],
+            backgroundColor: 'rgba(255, 99, 132, 0.7)',
+            borderRadius: 6,
+            borderSkipped: false
+          }
+        ]
+      },
+      options: {
+        responsive: true,
+        plugins: {
+          legend: { labels: { color: 'white' } },
+          tooltip: {
+            callbacks: {
+              label: function (context) {
+                return `₹${context.parsed.y.toLocaleString()}`;
+              }
+            }
+          }
+        },
+        scales: {
+          x: { ticks: { color: 'white' } },
+          y: {
+            beginAtZero: true,
+            ticks: {
+              color: 'white',
+              callback: v => `₹${v.toLocaleString()}`
+            }
+          }
+        }
+      }
+    });
+  </script>
+
+</body>
+</html>
