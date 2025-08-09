@@ -2480,3 +2480,92 @@ section {
     grid-template-columns: 1fr; /* Stack vertically on mobile */
   }
 }
+
+/* ======== COMFORT THEME ======== */
+
+/* Global */
+body {
+  background-color: #1b1b1b;
+  color: #ffffff;
+  font-family: 'Poppins', sans-serif;
+}
+
+/* Headings */
+h1, h2, h3 {
+  color: #ffffff;
+}
+
+/* Navigation */
+nav a {
+  color: #ffffff;
+}
+nav a:hover {
+  color: #00ffe5;
+}
+
+/* Service & Impact Cards */
+.service-card, .impact-card {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 12px;
+  padding: 20px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.service-card:hover, .impact-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 6px 18px rgba(255, 187, 102, 0.3);
+}
+
+/* Buttons */
+button, .glow-btn {
+  background: linear-gradient(90deg, #00ffe5, #ffbb66);
+  border: none;
+  color: #1b1b1b;
+  font-weight: bold;
+  padding: 12px 24px;
+  border-radius: 6px;
+  transition: all 0.3s ease;
+}
+button:hover, .glow-btn:hover {
+  filter: brightness(1.1);
+  box-shadow: 0 0 12px rgba(255, 187, 102, 0.4);
+}
+
+/* Inputs */
+input, textarea {
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 6px;
+  color: #fff;
+}
+
+/* Charts */
+canvas {
+  background: rgba(0, 0, 0, 0.3);
+  border-radius: 10px;
+  padding: 10px;
+}
+.data-text {
+  color: #00ffe5; /* Cyan tone from logo for "The Data" */
+}
+
+.dish-text {
+  color: #ff9b73; /* Exact warm neon orange from your logo */
+}
+.neon-title {
+  font-size: 3rem;
+  font-weight: bold;
+  text-align: center;
+}
+
+/* The Data */
+.data-text {
+  color: #00ffe5; /* Cyan tone */
+  text-shadow: 0 0 8px rgba(0, 255, 229, 0.6); /* Soft cyan glow */
+}
+
+/* Dish */
+.dish-text {
+  color: #ff9b73; /* Exact warm neon orange from logo */
+  text-shadow: 0 0 8px rgba(255, 155, 115, 0.6); /* Soft orange glow */
+}
