@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Customer Behavior Analytics | The Data Dish</title>
+
+  <!-- Meta Description -->
+  <meta name="description" content="Understand loyalty trends and customer segmentation with The Data Dish’s interactive analytics dashboard.">
+
+  <!-- Canonical URL -->
+  <link rel="canonical" href="https://www.thedatadish.in/customer-behavior.html">
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Customer Behavior Analytics | The Data Dish">
+  <meta property="og:description" content="Track loyalty patterns and segment customers to grow your restaurant business.">
+  <meta property="og:url" content="https://www.thedatadish.in/customer-behavior.html">
+  <meta property="og:type" content="website">
+
+  <!-- CSS & Fonts -->
+  <link rel="stylesheet" href="style.css">
+  <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+
+<body>
+  <header>
+    <nav>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="sales-tracking.html">Sales Tracking</a></li>
+        <li><a href="inventory.html">Inventory</a></li>
+        <li><a href="marketing.html">Marketing Automation</a></li>
+        <li><a href="customer-behavior.html" class="active">Customer Behavior</a></li>
+        <li><a href="index.html#services">Services</a></li>
+        <li><a href="index.html#contact">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main class="service-detail" data-aos="fade-up">
+    <section class="hero-subpage">
+      <h1>Customer Behavior Analytics</h1>
+      <p>📊 Understand loyalty patterns and customer segments to grow your business.</p>
+    </section>
+
+    <section class="content">
+      <h2>Key Features</h2>
+      <div class="service-cards">
+        <div class="card">
+          <h3>Loyalty & Repeat Visit Tracking</h3>
+          <p>See which customers return most often and reward them with personalized offers.</p>
+        </div>
+        <div class="card center-card">
+          <h3>Customer Segmentation Insights</h3>
+          <p>Group customers by visit frequency, spending, and preferences for targeted marketing.</p>
+        </div>
+      </div>
+
+      <h2>Customer Insights Overview</h2>
+      <canvas id="customerChart" width="400" height="200"></canvas>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 The Data Dish</p>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+  <script>
+    AOS.init({ duration: 1000, once: true });
+  </script>
+
+  <script>
+    const ctx = document.getElementById('customerChart').getContext('2d');
+    const customerChart = new Chart(ctx, {
+      data: {
+        labels: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun'],
+        datasets: [
+          {
+            type: 'line',
+            label: 'Loyalty Visits',
+            data: [50, 65, 80, 70, 90, 110],
+            borderColor: '#00ffe5',
+            backgroundColor: 'rgba(0, 255, 229, 0.2)',
+            yAxisID: 'y',
+            tension: 0.4
+          },
+          {
+            type: 'bar',
+            label: 'New Customers',
+            data: [30, 45, 40, 60, 55, 65],
+            backgroundColor: 'rgba(255, 99, 132, 0.7)',
+            yAxisID: 'y1',
+            borderRadius: 6
+          }
+        ]
+      },
+      options: {
+        responsive: true,
+        interaction: {
+          mode: 'index',
+          intersect: false
+        },
+        stacked: false,
+        plugins: {
+          legend: { labels: { color: 'white' } },
+          tooltip: { enabled: true }
+        },
+        scales: {
+          x: { ticks: { color: 'white' } },
+          y: {
+            type: 'linear',
+            position: 'left',
+            ticks: { color: 'white' }
+          },
+          y1: {
+            type: 'linear',
+            position: 'right',
+            grid: { drawOnChartArea: false },
+            ticks: { color: 'white' }
+          }
+        }
+      }
+    });
+  </script>
+</body>
+</html>
