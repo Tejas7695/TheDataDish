@@ -2943,3 +2943,66 @@ canvas {
     margin-top: 40px;
   }
 }
+/* ===== Mobile Fixes for The Data Dish ===== */
+@media (max-width: 768px) {
+  
+  /* Hero Section */
+  .hero {
+    padding: 60px 20px 40px;
+    text-align: center;
+  }
+  .hero-content h1 {
+    font-size: 2rem;
+    line-height: 1.2;
+  }
+  .hero-subtitle {
+    font-size: 1rem;
+  }
+
+  /* Services Section */
+  .services {
+    padding-top: 30px;
+  }
+  .services .section-title {
+    margin-bottom: 20px;
+  }
+  .service-row {
+    flex-direction: column;
+    gap: 20px;
+  }
+  .service-card {
+    width: 100%;
+    margin: 0 auto;
+  }
+
+  /* Tools Section */
+  .tools-section {
+    padding: 40px 20px;
+  }
+  .tools-container {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+  .tool-card {
+    width: 100%;
+    margin: 0 auto;
+  }
+
+  /* Impact Section */
+  .impact-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  /* Footer Fix */
+  .footer {
+    padding: 30px 20px;
+    text-align: center;
+  }
+  .footer-content {
+    flex-direction: column;
+    gap: 20px;
+  }
+}
