@@ -2792,3 +2792,108 @@ canvas {
   box-shadow: 0 0 10px #00fff0, 0 0 20px #ff00ff;
   border-radius: 2px;
 }
+/* ============================= */
+/* 📱 Mobile & Tablet Optimizations */
+/* ============================= */
+@media (max-width: 1024px) {
+  /* Reduce padding on big sections for tablets */
+  section {
+    padding: 60px 20px;
+  }
+
+  .hero-content {
+    text-align: center;
+    padding: 40px 20px;
+  }
+
+  .hero-content h1 {
+    font-size: 2.5rem;
+    line-height: 1.2;
+  }
+
+  .hero-content p {
+    font-size: 1.1rem;
+  }
+}
+
+@media (max-width: 768px) {
+  /* Navigation */
+  .nav-links {
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  /* Hero Section */
+  .hero-content {
+    padding: 30px 15px;
+  }
+
+  .hero-content h1 {
+    font-size: 2.2rem;
+  }
+
+  .hero-subtitle {
+    font-size: 1rem;
+  }
+
+  /* Service & Tool Cards */
+  .service-row, 
+  .tools-container {
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .service-card, 
+  .tool-card {
+    width: 100%;
+    min-height: auto;
+    padding: 20px;
+    text-align: center;
+  }
+
+  /* Impact cards stacked */
+  .impact-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  /* Footer */
+  .footer-content {
+    flex-direction: column;
+    text-align: center;
+    gap: 20px;
+  }
+}
+
+@media (max-width: 480px) {
+  /* Hero text smaller for mobile */
+  .hero-content h1 {
+    font-size: 1.8rem;
+  }
+
+  .hero-content p {
+    font-size: 0.95rem;
+  }
+
+  /* Buttons */
+  .glow-btn,
+  button {
+    width: 100%;
+    padding: 12px;
+    font-size: 1rem;
+  }
+
+  /* Reduce section padding */
+  section {
+    padding: 40px 15px;
+  }
+
+  /* Footer small */
+  .footer-logo h2 {
+    font-size: 1.4rem;
+  }
+
+  .footer-copy {
+    font-size: 0.8rem;
+  }
+}
