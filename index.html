@@ -25,44 +25,20 @@
   <meta name="twitter:description" content="AI-powered dashboards for sales, inventory, and marketing insights — built for restaurants.">
   <meta name="twitter:image" content="https://www.thedatadish.in/path-to-your-image.jpg">
 
-  <!-- ✅ Favicon for all major browsers -->
-<link rel="icon" href="favicon-192x192.png" sizes="192x192">
-<link rel="shortcut icon" href="favicon-192x192.png" type="image/png">
+  <!-- ✅ Favicon -->
+  <link rel="icon" href="favicon-192x192.png" sizes="192x192">
+  <link rel="shortcut icon" href="favicon-192x192.png" type="image/png">
 
-  <!-- Structured Data (JSON-LD) -->
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "Organization",
-    "name": "The Data Dish",
-    "url": "https://www.thedatadish.in/",
-    "logo": "https://www.thedatadish.in/path-to-your-logo.png",
-    "description": "The Data Dish provides restaurant analytics dashboards for sales, inventory, and marketing insights.",
-    "sameAs": [
-      "https://www.facebook.com/yourpage",
-      "https://www.linkedin.com/company/yourpage",
-      "https://twitter.com/yourpage"
-    ],
-    "founder": {
-      "@type": "Person",
-      "name": "Your Name"
-    },
-    "foundingDate": "2024",
-    "areaServed": "Worldwide",
-    "keywords": "restaurant analytics, AI dashboards, sales tracking, inventory management, marketing insights"
-  }
-  </script>
-
-  <!-- Styles & Fonts -->
-  <link rel="stylesheet" href="style.css">
+  <!-- Fonts & Icons -->
   <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
 
+  <link rel="stylesheet" href="style.css">
+
   <style>
-    html {
-      scroll-behavior: smooth;
-    }
+    html { scroll-behavior: smooth; }
+
     nav a {
       color: white;
       text-decoration: none;
@@ -80,98 +56,36 @@
       transition: transform 0.3s ease;
       transform-origin: right;
     }
-    nav a:hover::after {
-      transform: scaleX(1);
-      transform-origin: left;
-    }
-    nav a.active {
-      color: #00ffe5;
-      border-bottom: 2px solid #00ffe5;
+    nav a:hover::after { transform: scaleX(1); transform-origin: left; }
+    nav a.active { color: #00ffe5; border-bottom: 2px solid #00ffe5; }
+
+    /* ✅ Mobile Fixes */
+    @media (max-width: 768px) {
+      .hero { padding: 80px 20px 60px; text-align: center; }
+      .hero-content h1 { font-size: 2.2rem; line-height: 1.3; }
+      .hero-content p { font-size: 1rem; margin-top: 10px; }
+      .glow-btn { padding: 10px 18px; font-size: 1rem; }
+
+      .section-title { font-size: 1.6rem; margin-bottom: 20px; margin-top: 40px; }
+      .service-row, .tools-container, .impact-grid {
+        flex-direction: column;
+        gap: 20px;
+      }
+      .service-card, .tool-card, .impact-card { width: 100%; margin: 0 auto; }
+
+      #tools { margin-top: 40px; }
+      .impact-section { margin-top: 40px; }
+      footer { margin-top: 60px; }
     }
   </style>
-
-    <!-- ✅ FAQ Schema for rich search results -->
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "FAQPage",
-    "mainEntity": [
-      {
-        "@type": "Question",
-        "name": "What services does The Data Dish offer?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "The Data Dish provides restaurant analytics dashboards for sales tracking, inventory management, marketing automation, customer insights, and performance reporting."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "Who is The Data Dish for?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "It’s built specifically for small restaurant owners, cafes, cloud kitchens, and food entrepreneurs looking to make data-driven decisions."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "How can I contact The Data Dish?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "You can reach us via the contact form on our homepage or email us at contact@thedatadish.in."
-        }
-      }
-    ]
-  }
-  </script>
-
-  <script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "LocalBusiness",
-  "name": "The Data Dish",
-  "image": "https://www.thedatadish.in/path-to-your-logo.jpg",
-  "description": "The Data Dish provides restaurant analytics dashboards for sales tracking, inventory, and marketing automation.",
-  "url": "https://www.thedatadish.in/",
-  "telephone": "+91-8879504945",
-  "email": "contact@thedatadish.in",
-  "address": {
-    "@type": "PostalAddress",
-    "addressCountry": "IN"
-  },
-  "areaServed": "India",
-  "founder": {
-    "@type": "Person",
-    "name": "Tejas Shingte"
-  },
-  "sameAs": [
-    "https://www.instagram.com/thedatadish/"
-  ]
-}
-</script>
-
- <!-- ✅ Structured Data for Google Logo -->
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "Organization",
-    "name": "The Data Dish",
-    "url": "https://www.thedatadish.in",
-    "logo": "https://www.thedatadish.in/favicon-192x192.png"
-  }
-  </script>
-
 </head>
 
 <body>
-   <div id="particles-js"></div>
+  <div id="particles-js"></div>
 
-  <!-- ✅ Navigation Bar -->
+  <!-- ✅ Navigation -->
   <nav class="main-nav">
-    <div class="hamburger">
-      <div></div>
-      <div></div>
-      <div></div>
-    </div>
+    <div class="hamburger"><div></div><div></div><div></div></div>
     <ul class="nav-links">
       <li><a href="#hero" class="nav-link">Home</a></li>
       <li><a href="#services" class="nav-link">Services</a></li>
@@ -181,68 +95,47 @@
     </ul>
   </nav>
 
-<!-- HERO SECTION -->
-<section class="hero" id="hero">
-  <div class="hero-particles" id="hero-particles"></div>
-
-  <div class="hero-content">
-    <h1 class="neon-title">
-      <span class="data-text">The Data</span> <span class="dish-text">Dish</span>
-    </h1>
-    <p class="hero-subtitle">Restaurant Analytics Simplified</p>
-    <a href="#services" class="glow-btn">Explore Services</a>
-  </div>
-</section>
+  <!-- HERO -->
+  <section class="hero" id="hero">
+    <div class="hero-particles" id="hero-particles"></div>
+    <div class="hero-content">
+      <h1 class="neon-title">
+        <span class="data-text">The Data</span> <span class="dish-text">Dish</span>
+      </h1>
+      <p class="hero-subtitle">Restaurant Analytics Simplified</p>
+      <a href="#services" class="glow-btn">Explore Services</a>
+    </div>
+  </section>
 
   <!-- SERVICES -->
   <section id="services" class="services" data-aos="fade-up">
     <h2 class="section-title">Services</h2>
     <div class="service-row top">
       <a href="sales-tracking.html" class="service-card-link">
-        <div class="service-card" data-aos="fade-up">
-          <h3>📊 Sales Tracking Dashboards</h3>
-          <p>Track your restaurant's revenue daily, weekly, and monthly using real-time dashboards.</p>
-        </div>
+        <div class="service-card"><h3>📊 Sales Tracking Dashboards</h3><p>Track your restaurant's revenue daily, weekly, and monthly using real-time dashboards.</p></div>
       </a>
       <a href="inventory.html" class="service-card-link">
-        <div class="service-card" data-aos="fade-up" data-aos-delay="100">
-          <h3>📦 Inventory Management Tools</h3>
-          <p>Reduce waste, manage ingredients, and receive low stock alerts automatically.</p>
-        </div>
+        <div class="service-card"><h3>📦 Inventory Management Tools</h3><p>Reduce waste, manage ingredients, and receive low stock alerts automatically.</p></div>
       </a>
-       <a href="customer-behavior.html" class="service-card-link">
-  <div class="service-card" data-aos="fade-up" data-aos-delay="300">
-    <h3>👥 Customer Behavior Insights</h3>
-    <p>Understand loyalty trends, peak hours, and visit patterns to optimize service.</p>
-  </div>
-</a>
+      <a href="customer-behavior.html" class="service-card-link">
+        <div class="service-card"><h3>👥 Customer Behavior Insights</h3><p>Understand loyalty trends, peak hours, and visit patterns to optimize service.</p></div>
+      </a>
     </div>
     <div class="service-row bottom">
-     <a href="marketing.html" class="service-card-link">
-        <div class="service-card" data-aos="fade-up" data-aos-delay="200">
-          <h3>📣 Marketing Analytics & Automation</h3>
-          <p>Segment your customers and automate offers with data-driven marketing tools.</p>
-        </div>
+      <a href="marketing.html" class="service-card-link">
+        <div class="service-card"><h3>📣 Marketing Analytics & Automation</h3><p>Segment your customers and automate offers with data-driven marketing tools.</p></div>
       </a>
       <a href="performance-reports.html" class="service-card-link">
-  <div class="service-card" data-aos="fade-up" data-aos-delay="400">
-    <h3>📈 Performance & Profitability Reports</h3>
-    <p>Receive simplified reports showing what’s working — and what’s not.</p>
-  </div>
-</a>
+        <div class="service-card"><h3>📈 Performance & Profitability Reports</h3><p>Receive simplified reports showing what’s working — and what’s not.</p></div>
+      </a>
     </div>
   </section>
 
-  <!-- OUR STORY -->
+  <!-- STORY -->
   <section id="story" class="our-story" data-aos="fade-up">
     <h2>Our Story: Empowering Restaurants with Data</h2>
-    <p>
-      The Data Dish was born to help independent restaurants thrive through analytics.
-      What began as a personal project became a full-service platform that turns complex data into simple, visual insights.
-    </p>
-    <p>
-      Built by food-lovers and data nerds, we aim to bring world-class intelligence to local eateries.
-    </p>
+    <p>The Data Dish was born to help independent restaurants thrive through analytics...</p>
+    <p>Built by food-lovers and data nerds, we aim to bring world-class intelligence to local eateries.</p>
   </section>
 
   <!-- CONTACT -->
@@ -257,74 +150,36 @@
     </form>
   </section>
 
- <!-- TOOLS SECTION -->
-<section id="tools" class="tools-section" data-aos="fade-up">
-  <h2 class="section-title">Powerful Tools for Your Restaurant</h2>
-  <div class="tools-container">
-    
-    <!-- <!-- ROI Calculator Teaser -->
-<a href="roi-calculator.html" class="tool-card cyan-glow" data-aos="fade-up">
-  <h3>📈 ROI Calculator</h3>
-  <p>Estimate how much The Data Dish can grow your restaurant profits.</p>
-</a>
-
-<!-- Live Dashboard Teaser -->
-    <a href="live-dashboard.html" class="tool-card green-glow" data-aos="fade-up" data-aos-delay="100">
-      <h3>📊 Live Dashboard Demo</h3>
-      <p>See real-time restaurant metrics in action with our demo dashboard.</p>
-    </a>
-
-  </div>
-</section>
-
- <!-- IMPACT SECTION -->
-<section class="impact-section" id="impact">
-  <h2 class="section-title">Why Restaurants Love The Data Dish</h2>
-  
-  <div class="impact-grid">
-    <div class="impact-card" data-aos="fade-up">
-      <i class="fas fa-bolt"></i>
-      <h3>Real-Time Insights</h3>
-      <p>Make decisions on the fly with lightning-fast dashboards.</p>
+  <!-- TOOLS -->
+  <section id="tools" class="tools-section" data-aos="fade-up">
+    <h2 class="section-title">Powerful Tools for Your Restaurant</h2>
+    <div class="tools-container">
+      <a href="roi-calculator.html" class="tool-card cyan-glow"><h3>📈 ROI Calculator</h3><p>Estimate how much The Data Dish can grow your restaurant profits.</p></a>
+      <a href="live-dashboard.html" class="tool-card green-glow"><h3>📊 Live Dashboard Demo</h3><p>See real-time restaurant metrics in action with our demo dashboard.</p></a>
     </div>
+  </section>
 
-    <div class="impact-card" data-aos="fade-up" data-aos-delay="100">
-      <i class="fas fa-shield-alt"></i>
-      <h3>Reliable Data</h3>
-      <p>Get accurate, clean, and secure analytics you can trust.</p>
+  <!-- IMPACT -->
+  <section class="impact-section" id="impact">
+    <h2 class="section-title">Why Restaurants Love The Data Dish</h2>
+    <div class="impact-grid">
+      <div class="impact-card"><i class="fas fa-bolt"></i><h3>Real-Time Insights</h3><p>Make decisions on the fly with lightning-fast dashboards.</p></div>
+      <div class="impact-card"><i class="fas fa-shield-alt"></i><h3>Reliable Data</h3><p>Get accurate, clean, and secure analytics you can trust.</p></div>
+      <div class="impact-card"><i class="fas fa-fire-alt"></i><h3>Built for Restaurants</h3><p>Every feature is designed specifically for F&B businesses.</p></div>
     </div>
-
-    <div class="impact-card" data-aos="fade-up" data-aos-delay="200">
-      <i class="fas fa-fire-alt"></i>
-      <h3>Built for Restaurants</h3>
-      <p>Every feature is designed specifically for F&B businesses.</p>
-    </div>
-  </div>
-</section>
+  </section>
 
   <!-- FOOTER -->
   <footer class="footer">
     <div class="footer-content">
-      <div class="footer-logo">
-        <h2>The Data Dish</h2>
-        <p>Empowering restaurant analytics like never before.</p>
-      </div>
-      <div class="footer-links">
-        <a href="#">Home</a>
-        <a href="#services">Services</a>
-        <a href="#story">Our Story</a>
-        <a href="#contact">Contact</a>
-      </div>
-      <div class="footer-socials">
-        <a href="https://www.instagram.com/thedatadish/" target="_blank">
-          <i class="fab fa-instagram"></i>
-        </a>
-      </div>
+      <div class="footer-logo"><h2>The Data Dish</h2><p>Empowering restaurant analytics like never before.</p></div>
+      <div class="footer-links"><a href="#">Home</a><a href="#services">Services</a><a href="#story">Our Story</a><a href="#contact">Contact</a></div>
+      <div class="footer-socials"><a href="https://www.instagram.com/thedatadish/" target="_blank"><i class="fab fa-instagram"></i></a></div>
     </div>
     <p class="footer-copy">&copy; 2025 The Data Dish. Built with 💙 + Data.</p>
   </footer>
 
-  <!-- JS Files -->
+  <!-- JS -->
   <script src="https://cdn.jsdelivr.net/npm/particles.js"></script>
   <script>
     particlesJS("particles-js", {
@@ -345,103 +200,16 @@
       },
       "interactivity": {
         "detect_on": "canvas",
-        "events": {
-          "onhover": { "enable": true, "mode": "grab" }
-        }
+        "events": { "onhover": { "enable": true, "mode": "grab" } }
       },
       "retina_detect": true
     });
   </script>
 
   <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
-<script>
-  AOS.init({ duration: 1000, once: true });
-  window.addEventListener('load', AOS.refresh);
-</script>
-
   <script>
-    const sections = document.querySelectorAll("section");
-    const navLinks = document.querySelectorAll(".nav-link");
-    window.addEventListener("scroll", () => {
-      let current = "";
-      sections.forEach((section) => {
-        const sectionTop = section.offsetTop - 70;
-        if (pageYOffset >= sectionTop) {
-          current = section.getAttribute("id");
-        }
-      });
-      navLinks.forEach((link) => {
-        link.classList.remove("active");
-        if (link.getAttribute("href") === `#${current}`) {
-          link.classList.add("active");
-        }
-      });
-    });
+    AOS.init({ duration: 1000, once: true });
+    window.addEventListener('load', AOS.refresh);
   </script>
-
-  <!-- Back to Top Button -->
-  <a href="#hero" class="back-to-top"><i class="fas fa-arrow-up"></i></a>
-
-  <div class="hamburger">
-  <span></span>
-  <span></span>
-  <span></span>
-</div>
-
-<script>
-  // Back to top button visibility
-  const backToTop = document.querySelector(".back-to-top");
-
-  window.addEventListener("scroll", () => {
-    if (window.pageYOffset > 400) {
-      backToTop.style.display = "block";
-    } else {
-      backToTop.style.display = "none";
-    }
-  });
-
-  // Custom cursor movement
-  const cursor = document.querySelector(".custom-cursor");
-  document.addEventListener("mousemove", (e) => {
-    cursor.style.top = `${e.clientY}px`;
-    cursor.style.left = `${e.clientX}px`;
-  });
-
-  // Mobile nav hamburger toggle
-  const hamburger = document.querySelector('.hamburger');
-  if (hamburger) {
-    hamburger.addEventListener('click', function () {
-      document.body.classList.toggle('mobile-nav-open');
-    });
-  }
-</script>
-
-<script>
-particlesJS("hero-particles", {
-  "particles": {
-    "number": { "value": 60, "density": { "enable": true, "value_area": 800 }},
-    "color": { "value": "#00ffe5" },
-    "shape": { "type": "circle" },
-    "opacity": { "value": 0.5, "random": true },
-    "size": { "value": 3, "random": true },
-    "line_linked": {
-      "enable": true,
-      "distance": 150,
-      "color": "#00ffe5",
-      "opacity": 0.4,
-      "width": 1
-    },
-    "move": { "enable": true, "speed": 2 }
-  },
-  "interactivity": {
-    "detect_on": "canvas",
-    "events": {
-      "onhover": { "enable": true, "mode": "grab" }
-    }
-  },
-  "retina_detect": true
-});
-</script>
-
 </body>
 </html>
