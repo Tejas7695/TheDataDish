@@ -2897,3 +2897,49 @@ canvas {
     font-size: 0.8rem;
   }
 }
+/* 📱 Mobile fixes only */
+@media (max-width: 768px) {
+
+  /* Space out sections properly */
+  section {
+    padding: 40px 15px;
+  }
+
+  /* Make hero closer to services */
+  .hero {
+    margin-bottom: 30px;
+  }
+
+  /* Stack services, tools, and impact cards vertically with gaps */
+  .service-row,
+  .tools-container,
+  .impact-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  /* Ensure cards fill width */
+  .service-card,
+  .tool-card,
+  .impact-card {
+    width: 100%;
+    min-height: auto;
+  }
+
+  /* Fix last service row spacing */
+  .service-row.bottom {
+    margin-bottom: 30px;
+  }
+
+  /* Ensure Tools section appears before Why Restaurants Love */
+  #tools {
+    margin-top: 40px;
+    margin-bottom: 40px;
+  }
+
+  /* Add breathing room before footer */
+  footer {
+    margin-top: 40px;
+  }
+}
