@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Live Dashboard Demo | The Data Dish</title>
+
+  <!-- Chart.js -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <link rel="stylesheet" href="style.css">
+
+  <style>
+    body {
+      background-color: #0a0a0a;
+      color: white;
+      font-family: Arial, sans-serif;
+      text-align: center;
+      padding: 20px;
+    }
+
+    h1 {
+      margin-bottom: 20px;
+    }
+
+    .dashboard-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+      max-width: 1200px;
+      margin: auto;
+    }
+
+    .chart-container {
+      background: rgba(0, 0, 0, 0.7);
+      border-radius: 12px;
+      padding: 15px;
+      box-shadow: 0 0 10px rgba(0, 255, 229, 0.5);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      cursor: pointer;
+    }
+
+    .chart-container:hover {
+      transform: scale(1.05);
+      box-shadow: 0 0 20px rgba(0, 255, 229, 0.8);
+    }
+
+    /* Popup overlay */
+    .popup {
+      display: none;
+      position: fixed;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      background: rgba(0,0,0,0.85);
+      justify-content: center;
+      align-items: center;
+      z-index: 1000;
+    }
+
+    .popup-content {
+      background: #111;
+      padding: 20px;
+      border-radius: 12px;
+      max-width: 800px;
+      width: 90%;
+      color: white;
+      text-align: left;
+    }
+
+    .popup-content canvas {
+      max-height: 400px;
+    }
+
+    .close-btn {
+      background: #ff0055;
+      color: white;
+      border: none;
+      padding: 8px 15px;
+      cursor: pointer;
+      border-radius: 6px;
+      float: right;
+    }
+
+    .disclaimer {
+      margin-top: 30px;
+      font-size: 0.85rem;
+      color: #ccc;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>📊 Live Dashboard Demo</h1>
+  <p>Click any chart to enlarge and view detailed insights.</p>
+
+  <div class="dashboard-grid">
+    <div class="chart-container" data-info="Today's sales peaked during dinner hours. Pasta Primavera was the top seller.">
+      <canvas id="salesChart"></canvas>
+    </div>
+    <div class="chart-container" data-info="Cheeseburgers and Tacos make up 60% of all orders this week.">
+      <canvas id="menuChart"></canvas>
+    </div>
+    <div class="chart-container" data-info="Customer visits increased steadily through the week, with Friday being the busiest.">
+      <canvas id="visitsChart"></canvas>
+    </div>
+    <div class="chart-container" data-info="80% of customers rate their dining experience as Excellent or Good.">
+      <canvas id="feedbackChart"></canvas>
+    </div>
+    <div class="chart-container" data-info="Desserts contribute 15% of total revenue, up from 10% last month.">
+      <canvas id="dessertChart"></canvas>
+    </div>
+    <div class="chart-container" data-info="Daily waste reduced by 25% after optimizing ingredient orders.">
+      <canvas id="wasteChart"></canvas>
+    </div>
+  </div>
+
+  <!-- Popup for enlarged chart -->
+  <div class="popup" id="popup">
+    <div class="popup-content">
+      <button class="close-btn" id="closePopup">Close</button>
+      <canvas id="popupChart"></canvas>
+      <p id="chartInfo"></p>
+    </div>
+  </div>
+
+  <p class="disclaimer">*These charts are for demonstration purposes only. Actual reports and dashboards will be fully customized to your restaurant's needs.*</p>
+
+  <script>
+    // Chart data
+    const chartData = {
+      salesChart: {
+        type: 'line',
+        data: {
+          labels: ['10AM','12PM','2PM','4PM','6PM','8PM','10PM'],
+          datasets: [{
+            label: 'Sales ($)',
+            data: [200, 450, 300, 400, 650, 900, 500],
+            borderColor: '#00ffe5',
+            backgroundColor: 'rgba(0,255,229,0.2)',
+            fill: true
+          }]
+        }
+      },
+      menuChart: {
+        type: 'pie',
+        data: {
+          labels: ['Cheeseburger', 'Taco', 'Pasta Primavera', 'Salad', 'Pizza'],
+          datasets: [{
+            data: [35, 25, 20, 10, 10],
+            backgroundColor: ['#ff6384', '#36a2eb', '#ffce56', '#00ffe5', '#9966ff']
+          }]
+        }
+      },
+      visitsChart: {
+        type: 'bar',
+        data: {
+          labels: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'],
+          datasets: [{
+            label: 'Customer Visits',
+            data: [50, 60, 70, 80, 120, 100, 90],
+            backgroundColor: '#36a2eb'
+          }]
+        }
+      },
+      feedbackChart: {
+        type: 'doughnut',
+        data: {
+          labels: ['Excellent', 'Good', 'Average', 'Poor'],
+          datasets: [{
+            data: [50, 30, 15, 5],
+            backgroundColor: ['#4caf50', '#2196f3', '#ffc107', '#f44336']
+          }]
+        }
+      },
+      dessertChart: {
+        type: 'bar',
+        data: {
+          labels: ['Jan', 'Feb', 'Mar', 'Apr', 'May'],
+          datasets: [{
+            label: 'Dessert Revenue ($)',
+            data: [1200, 1350, 1500, 1650, 1800],
+            backgroundColor: '#ffce56'
+          }]
+        }
+      },
+      wasteChart: {
+        type: 'line',
+        data: {
+          labels: ['Week 1', 'Week 2', 'Week 3', 'Week 4'],
+          datasets: [{
+            label: 'Waste (kg)',
+            data: [50, 45, 40, 37],
+            borderColor: '#ff0055',
+            backgroundColor: 'rgba(255,0,85,0.2)',
+            fill: true
+          }]
+        }
+      }
+    };
+
+    // Render charts
+    Object.keys(chartData).forEach(id => {
+      new Chart(document.getElementById(id), chartData[id]);
+    });
+
+    // Popup logic
+    const popup = document.getElementById('popup');
+    const popupChartCanvas = document.getElementById('popupChart');
+    let popupChartInstance = null;
+    const chartInfo = document.getElementById('chartInfo');
+
+    document.querySelectorAll('.chart-container').forEach(container => {
+      container.addEventListener('click', () => {
+        const chartId = container.querySelector('canvas').id;
+        const infoText = container.getAttribute('data-info');
+        chartInfo.textContent = infoText;
+
+        if (popupChartInstance) {
+          popupChartInstance.destroy();
+        }
+        popupChartInstance = new Chart(popupChartCanvas, chartData[chartId]);
+
+        popup.style.display = 'flex';
+      });
+    });
+
+    document.getElementById('closePopup').addEventListener('click', () => {
+      popup.style.display = 'none';
+    });
+  </script>
+
+</body>
+</html>

@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ROI Calculator | The Data Dish</title>
+  <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <style>
+    body {
+      font-family: 'Orbitron', sans-serif;
+      background-color: #0a0a0a;
+      color: white;
+      margin: 0;
+      padding: 0;
+    }
+    nav {
+      background: black;
+      padding: 15px;
+      text-align: center;
+    }
+    nav a {
+      color: cyan;
+      margin: 0 15px;
+      text-decoration: none;
+      font-size: 1.1rem;
+    }
+    nav a.active {
+      color: white;
+      border-bottom: 2px solid cyan;
+    }
+    .roi-section {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 50px 0;
+    }
+    .roi-box {
+      background: rgba(0, 0, 0, 0.7);
+      border-radius: 15px;
+      padding: 30px;
+      width: 100%;
+      max-width: 600px;
+      text-align: center;
+      box-shadow: 0 0 20px rgba(0, 255, 229, 0.5);
+    }
+    .roi-box h1 {
+      margin-bottom: 15px;
+      color: cyan;
+      text-shadow: 0 0 10px cyan;
+    }
+    .roi-box p {
+      font-size: 0.95rem;
+      margin-bottom: 20px;
+    }
+    .roi-box input {
+      width: 100%;
+      padding: 10px;
+      margin: 10px 0 20px 0;
+      border-radius: 5px;
+      border: none;
+      outline: none;
+      font-size: 1rem;
+    }
+    .glow-btn {
+      display: inline-block;
+      background: linear-gradient(90deg, #00ffe5, #00bfff);
+      color: black;
+      padding: 12px 25px;
+      border-radius: 8px;
+      font-size: 1rem;
+      text-decoration: none;
+      font-weight: bold;
+      transition: 0.3s;
+    }
+    .glow-btn:hover {
+      box-shadow: 0 0 20px #00ffe5;
+      transform: scale(1.05);
+    }
+    #roiResult {
+      margin-top: 15px;
+      color: #00ffe5;
+    }
+    .roi-note {
+      text-align: left;
+      margin-top: 20px;
+    }
+    .roi-note ul {
+      list-style: none;
+      padding-left: 0;
+    }
+    .roi-note li {
+      margin-bottom: 10px;
+    }
+    .disclaimer {
+      font-size: 0.85rem;
+      opacity: 0.7;
+      margin-top: 10px;
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navigation -->
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="index.html#services">Services</a>
+    <a href="roi-calculator.html" class="active">ROI Calculator</a>
+    <a href="index.html#contact">Contact</a>
+  </nav>
+
+  <!-- ROI Section -->
+  <section class="roi-section">
+    <div class="roi-box">
+      <h1>📈 ROI Calculator</h1>
+      <p>Estimate how much The Data Dish can grow your restaurant profits.</p>
+
+      <label>Current Monthly Revenue (₹):</label>
+      <input type="number" id="revenue" placeholder="50000">
+
+      <label>Expected Growth (%) with The Data Dish:</label>
+      <input type="number" id="growth" placeholder="8">
+
+      <button onclick="calculateROI()" class="glow-btn">Calculate ROI</button>
+
+      <h3 id="roiResult">💰 Estimated Annual ROI: ₹0</h3>
+
+      <div class="roi-note">
+        <h2>How We Deliver This ROI</h2>
+        <ul>
+          <li>📊 <strong>Increase Sales</strong> — Identify and double down on best-selling menu items.</li>
+          <li>📦 <strong>Reduce Waste</strong> — Smarter inventory alerts prevent overstocking.</li>
+          <li>📣 <strong>Boost Marketing ROI</strong> — Targeted offers improve conversion rates.</li>
+          <li>⚡ <strong>Faster Decisions</strong> — Real-time dashboards for instant insights.</li>
+        </ul>
+        <p class="disclaimer">*These estimates are for demonstration purposes only. Actual results may vary.</p>
+      </div>
+
+      <a href="index.html#contact" class="glow-btn">Contact Us</a>
+    </div>
+  </section>
+
+  <script>
+    function calculateROI() {
+      const revenue = document.getElementById("revenue").value;
+      const growth = document.getElementById("growth").value;
+
+      if (revenue && growth) {
+        const annualROI = (revenue * (growth / 100)) * 12;
+        document.getElementById("roiResult").textContent =
+          `💰 Estimated Annual ROI: ₹${annualROI.toLocaleString()}`;
+      } else {
+        document.getElementById("roiResult").textContent =
+          "⚠ Please enter both values.";
+      }
+    }
+  </script>
+
+</body>
+</html>
